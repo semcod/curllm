@@ -5,20 +5,17 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "curllm"
 version = "1.0.40"
-description = "Browser Automation with Local LLM (8GB GPU compatible)"
+description = "curllm - Intelligent browser automation with local LLMs (Qwen, Llama, Mistral) for data extraction and form automation using a dynamic LLM-DSL architecture without hardcoded selectors."
 readme = "README.md"
+license = "Apache-2.0"
 authors = [
   { name = "Tom Sapletta" }
 ]
-license = "Apache-2.0"
 requires-python = ">=3.10"
 keywords = ["llm", "browser", "automation", "scraping", "ollama", "playwright"]
 classifiers = [
-  "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3 :: Only",
-  "Operating System :: POSIX :: Linux",
-  "Framework :: Flask",
-  "Topic :: Internet :: WWW/HTTP",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
 ]
 dependencies = [
   "flask",
@@ -42,12 +39,18 @@ dependencies = [
 Homepage = "https://github.com/wronai/curllm"
 Issues = "https://github.com/wronai/curllm/issues"
 
+[project.optional-dependencies]
+mcp = [
+  "mcp>=1.0.0",
+]
+
 [project.scripts]
 curllm-setup = "curllm_core.cli.setup:main"
 curllm-doctor = "curllm_core.cli.doctor:main"
 curllm-web = "curllm_core.cli.web:main"
 curllm-flow = "curllm_core.cli.flow:main"
 curllm-feedback = "curllm_core.cli.feedback:main"
+curllm-mcp = "curllm_mcp.server:main"
 
 [tool.setuptools]
 # Install non-Python CLI script and top-level modules
@@ -55,7 +58,7 @@ script-files = ["curllm"]
 py-modules = ["curllm_server", "bql_parser", "curllm_web"]
 
 [tool.setuptools.packages.find]
-include = ["curllm_core*", "curllm_logs*", "functions*"]
+include = ["curllm_core*", "curllm_logs*", "curllm_mcp*", "functions*"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
@@ -64,3 +67,32 @@ markers = [
     "asyncio: mark test as async",
     "slow: mark test as slow running",
 ]
+
+[tool.pfix]
+# Self-healing Python configuration
+model = "openrouter/qwen/qwen3-coder-next"
+auto_apply = true
+auto_install_deps = true
+auto_restart = false
+max_retries = 3
+create_backups = false
+git_auto_commit = false
+
+[tool.pfix.runtime_todo]
+enabled = true
+todo_file = "TODO.md"
+min_severity = "low"
+deduplicate = true
+
+[tool.costs]
+# AI Cost tracking configuration
+badge = true
+update_readme = true
+readme_path = "README.md"
+default_model = "openrouter/qwen/qwen3-coder-next"
+analysis_mode = "byok"
+full_history = true
+max_commits = 500
+
+# Cost thresholds for badge colors (USD)
+badge_color_thresholds = { low = 1.0, medium = 5.0, high = 10.0, critical = 50.0 }

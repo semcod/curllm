@@ -29,6 +29,13 @@ def health_check():
         "version": "1.0.0",
     })
 
+
+@app.route('/api/interfaces', methods=['GET'])
+def list_interfaces():
+    from curllm_mcp.service import CurllmService
+
+    return jsonify(CurllmService().interfaces_info())
+
 @app.route('/api/execute', methods=['POST'])
 def execute():
     data = request.get_json() or {}

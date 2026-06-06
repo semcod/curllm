@@ -4,10 +4,29 @@
 
 ---
 
+## Surfaces
+
+| Surface | Entry | Use case |
+|---------|-------|----------|
+| **CLI** | `curllm` | Shell, scripts |
+| **REST** | `curllm-web` → `http://localhost:8810` | HTTP clients, Todomat adapter |
+| **MCP** | `curllm-mcp` | LLM agents (Cursor, Claude Desktop) |
+
+Discover surfaces at runtime:
+
+```bash
+curl http://localhost:8810/api/interfaces
+```
+
+MCP docs: [docs/MCP.md](../../MCP.md)
+
 ## REST Endpoints
 
 - GET `/health`
   - Returns server status and model info.
+
+- GET `/api/interfaces`
+  - Lists CLI, REST, and MCP surfaces with available tools and endpoints.
 
 - POST `/api/execute`
   - Content-Type: application/json

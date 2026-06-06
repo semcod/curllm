@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "curllm": {
+      "command": "curllm-mcp",
+      "cwd": "/home/tom/github/wronai/curllm",
+      "env": {
+        "CURLLM_API_HOST": "http://localhost:8810",
+        "OLLAMA_HOST": "http://localhost:11434"
+      }
+    }
+  }
+}

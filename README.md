@@ -2,6 +2,19 @@
   <img src="docs/curllm.png" alt="curllm logo" width="400">
 </p>
 
+
+## AI Cost Tracking
+
+![PyPI](https://img.shields.io/badge/pypi-costs-blue) ![Version](https://img.shields.io/badge/version-0.1.31-blue) ![Python](https://img.shields.io/badge/python-3.9+-blue) ![License](https://img.shields.io/badge/license-Apache--2.0-green)
+![AI Cost](https://img.shields.io/badge/AI%20Cost-$4.72-orange) ![Human Time](https://img.shields.io/badge/Human%20Time-65.9h-blue) ![Model](https://img.shields.io/badge/Model-openrouter%2Fqwen%2Fqwen3--coder--next-lightgrey)
+
+- 🤖 **LLM usage:** $4.7192 (167 commits)
+- 👤 **Human dev:** ~$6591 (65.9h @ $100/h, 30min dedup)
+
+Generated on 2026-06-06 using [openrouter/qwen/qwen3-coder-next](https://openrouter.ai/qwen/qwen3-coder-next)
+
+---
+
 <h1 align="center">curllm = curl + LLM</h1>
 
 <p align="center">
@@ -11,9 +24,19 @@
 <p align="center">
   <a href="https://pypi.org/project/curllm/"><img src="https://img.shields.io/pypi/v/curllm?color=blue&label=PyPI" alt="PyPI"></a>
   <a href="https://pypi.org/project/curllm/"><img src="https://img.shields.io/pypi/pyversions/curllm" alt="Python"></a>
+  <a href="https://pypi.org/project/curllm/"><img src="https://img.shields.io/pypi/dm/curllm" alt="Downloads"></a>
   <a href="https://github.com/wronai/curllm/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-green" alt="License"></a>
   <a href="https://github.com/wronai/curllm/stargazers"><img src="https://img.shields.io/github/stars/wronai/curllm?style=social" alt="Stars"></a>
+  <a href="https://github.com/wronai/curllm/network/members"><img src="https://img.shields.io/github/forks/wronai/curllm?style=social" alt="Forks"></a>
   <a href="https://github.com/wronai/curllm/issues"><img src="https://img.shields.io/github/issues/wronai/curllm" alt="Issues"></a>
+  <a href="https://github.com/wronai/curllm/pulls"><img src="https://img.shields.io/github/issues-pr/wronai/curllm" alt="Pull Requests"></a>
+  <a href="https://github.com/wronai/curllm/actions"><img src="https://img.shields.io/github/actions/workflow/status/wronai/curllm/test.yml?label=tests" alt="Tests"></a>
+  <a href="https://codecov.io/gh/wronai/curllm"><img src="https://img.shields.io/codecov/c/github/wronai/curllm" alt="Coverage"></a>
+  <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code Style"></a>
+  <a href="http://mypy-lang.org/"><img src="https://img.shields.io/badge/type%20checking-mypy-blue.svg" alt="Type Checking"></a>
+  <a href="https://github.com/wronai/curllm"><img src="https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-lightgrey" alt="Platform"></a>
+  <a href="https://github.com/wronai/curllm"><img src="https://img.shields.io/badge/dependencies-playwright%20%7C%20ollama-blue" alt="Dependencies"></a>
+  <a href="https://github.com/wronai/curllm"><img src="https://img.shields.io/badge/python-3.9+-blue" alt="Python Version"></a>
 </p>
 
 <p align="center">
@@ -336,6 +359,7 @@ config = LLMConfig(provider="ollama/qwen2.5:7b")
 
 ### Reference
 - **[🔌 API Reference](docs/v2/api/README.md)**
+- **[🤖 MCP (agents)](docs/MCP.md)** — `curllm-mcp` for Cursor / Claude Desktop
 - **[🛠️ Configuration](docs/v2/guides/CONFIGURATION.md)**
 - **[❓ Troubleshooting](docs/v2/guides/TROUBLESHOOTING.md)**
 
