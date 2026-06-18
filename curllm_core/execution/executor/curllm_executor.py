@@ -21,7 +21,7 @@ from curllm_core.page_context import extract_page_context
 from curllm_core.actions import execute_action
 from curllm_core.result_evaluator import evaluate_run_success
 from curllm_core.human_verify import handle_human_verification, looks_like_human_verify_text
-from curllm_core.extraction import generic_fastpath, direct_fastpath, product_heuristics, fallback_extract, extract_articles_eval, validate_with_llm, extract_links_by_selectors
+from curllm_core.extraction import validate_with_llm
 from curllm_core.bql import BQLExecutor
 from curllm_core.screenshots import take_screenshot as _take_screenshot_func
 from curllm_core.form_fill import deterministic_form_fill as _deterministic_form_fill_func, parse_form_pairs as _parse_form_pairs_func

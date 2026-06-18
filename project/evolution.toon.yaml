@@ -1,0 +1,83 @@
+# code2llm/evolution | 2380 func | 340f | 2026-06-06
+# generated in 0.01s
+
+NEXT[10] (ranked by impact):
+  [1] !! SPLIT           curllm_core/url_resolution/resolver.py
+      WHY: 1203L, 1 classes, max CC=25
+      EFFORT: ~4h  IMPACT: 30075
+
+  [2] !! SPLIT           static/js/app.js
+      WHY: 1162L, 0 classes, max CC=23
+      EFFORT: ~4h  IMPACT: 26726
+
+  [3] !! SPLIT-FUNC      deterministic_form_fill  CC=154  fan=57
+      WHY: CC=154 exceeds 15
+      EFFORT: ~1h  IMPACT: 8778
+
+  [4] !! SPLIT-FUNC      CurllmExecutor.execute_workflow  CC=125  fan=64
+      WHY: CC=125 exceeds 15
+      EFFORT: ~1h  IMPACT: 8000
+
+  [5] !! SPLIT-FUNC      run_task  CC=121  fan=58
+      WHY: CC=121 exceeds 15
+      EFFORT: ~1h  IMPACT: 7018
+
+  [6] !! SPLIT-FUNC      orchestrate_form_fill  CC=89  fan=73
+      WHY: CC=89 exceeds 15
+      EFFORT: ~1h  IMPACT: 6497
+
+  [7] !! SPLIT-FUNC      generate_action  CC=80  fan=46
+      WHY: CC=80 exceeds 15
+      EFFORT: ~1h  IMPACT: 3680
+
+  [8] !! SPLIT-FUNC      CurllmExtension.curllmExtension  CC=44  fan=72
+      WHY: CC=44 exceeds 15
+      EFFORT: ~1h  IMPACT: 3168
+
+  [9] !! SPLIT-FUNC      evaluate_run_success  CC=85  fan=21
+      WHY: CC=85 exceeds 15
+      EFFORT: ~1h  IMPACT: 1785
+
+  [10] !! SPLIT-FUNC      _planner_cycle  CC=69  fan=25
+      WHY: CC=69 exceeds 15
+      EFFORT: ~1h  IMPACT: 1725
+
+
+RISKS[3]:
+  ⚠ Splitting hardcoded_report.json may break 0 import paths
+  ⚠ Splitting curllm_core/url_resolution/resolver.py may break 23 import paths
+  ⚠ Splitting static/js/app.js may break 123 import paths
+
+METRICS-TARGET:
+  CC̄:          4.9 → ≤3.4
+  max-CC:      154 → ≤20
+  god-modules: 33 → 0
+  high-CC(≥15): 109 → ≤54
+  hub-types:   0 → ≤0
+
+PATTERNS (language parser shared logic):
+  _extract_declarations() in base.py — unified extraction for:
+    - TypeScript: interfaces, types, classes, functions, arrow funcs
+    - PHP: namespaces, traits, classes, functions, includes
+    - Ruby: modules, classes, methods, requires
+    - C++: classes, structs, functions, #includes
+    - C#: classes, interfaces, methods, usings
+    - Java: classes, interfaces, methods, imports
+    - Go: packages, functions, structs
+    - Rust: modules, functions, traits, use statements
+
+  Shared regex patterns per language:
+    - import: language-specific import/require/using patterns
+    - class: class/struct/trait declarations with inheritance
+    - function: function/method signatures with visibility
+    - brace_tracking: for C-family languages ({ })
+    - end_keyword_tracking: for Ruby (module/class/def...end)
+
+  Benefits:
+    - Consistent extraction logic across all languages
+    - Reduced code duplication (~70% reduction in parser LOC)
+    - Easier maintenance: fix once, apply everywhere
+    - Standardized FunctionInfo/ClassInfo models
+
+HISTORY:
+  (first run — no previous data)

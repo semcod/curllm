@@ -9,34 +9,14 @@ LOG_PREVIEW_CHARS = int(os.getenv("CURLLM_LOG_PREVIEW_CHARS", "35000") or 35000)
 
 from curllm_core.config import config
 from curllm_core.extraction import (
-    generic_fastpath,
-    direct_fastpath,
-    product_heuristics,
-    fallback_extract,
     extract_articles_eval,
-    validate_with_llm,
-    extract_links_by_selectors,
-    _extract_emails as _tool_extract_emails,
-    _extract_phones as _tool_extract_phones,
-    _extract_all_anchors as _tool_extract_all_anchors,
-    _extract_anchors_filtered as _tool_extract_anchors_filtered,
     refine_instruction_llm,
 )
-from curllm_core.human_verify import handle_human_verification, looks_like_human_verify_text
-from curllm_core.page_utils import auto_scroll as _auto_scroll, accept_cookies as _accept_cookies
-from curllm_core.captcha_slider import attempt_slider_challenge
-from curllm_core.slider_plugin import try_external_slider_solver
+from curllm_core.human_verify import handle_human_verification
+from curllm_core.page_utils import accept_cookies as _accept_cookies
 from curllm_core.result_store import previous_for_context as _previous_for_context
 from curllm_core.tool_retry import ToolRetryManager
 from curllm_core.task_runner_tools import execute_tool as _execute_tool
-from curllm_core.task_runner_early import (
-    smart_intent_check as _smart_intent_check,
-    try_early_form_fill as _try_early_form_fill,
-    try_early_articles as _try_early_articles,
-    try_selector_links as _try_selector_links,
-    try_fastpaths as _try_fastpaths,
-    try_product_extraction as _try_product_extraction,
-)
 from curllm_core.task_runner_steps import (
     step_visual as _step_visual,
     step_page_context as _step_page_context,
@@ -44,8 +24,6 @@ from curllm_core.task_runner_steps import (
     progress_and_maybe_break as _progress_and_maybe_break,
 )
 from curllm_core.task_runner_fallback import (
-    maybe_products_heuristics as _maybe_products_heuristics,
-    maybe_articles_no_click as _maybe_articles_no_click,
     finalize_fallback as _finalize_fallback,
 )
 

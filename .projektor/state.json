@@ -1,0 +1,11 @@
+{
+  "current_sprint": null,
+  "active_tickets": [
+    "CURL-1"
+  ],
+  "completed_tickets": [],
+  "blocked_tickets": [],
+  "total_commits": 0,
+  "total_tests_run": 0,
+  "last_test_coverage": 0.0
+}

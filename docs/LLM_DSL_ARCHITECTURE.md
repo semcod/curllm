@@ -8,15 +8,15 @@ Curllm uses an **LLM-driven Domain Specific Language (DSL)** architecture for dy
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    PRZED → PO                                    │
+│                    PRZED → PO                                   │
 ├─────────────────────────────────────────────────────────────────┤
 │ PRZED: if data_key in ['phone', 'tel']:                         │
 │ PO:    if data_key in phone_concepts:                           │
-│                                                                  │
+│                                                                 │
 │ PRZED: PLATFORM_SELECTORS = {'email': '#email'}                 │
 │ PO:    ELEMENT_PURPOSES = {'email': 'email input field'}        │
 │        + _find_auth_element() with LLM                          │
-│                                                                  │
+│                                                                 │
 │ PRZED: findField(['email', 'mail'], ...)  // hardcoded JS       │
 │ PO:    concepts = await generate_field_concepts_with_llm(page)  │
 │        result = await page.evaluate(PARAMETRIZED_JS, concepts)  │

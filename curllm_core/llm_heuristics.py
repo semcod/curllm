@@ -86,15 +86,15 @@ class LLMHeuristicsDiscovery:
                         const markers = [];
                         
                         // Check for common product indicators
-                        if (/\/p\//.test(path)) markers.push('/p/');
-                        if (/\/product/.test(path)) markers.push('/product');
-                        if (/\/produkt/.test(path)) markers.push('/produkt');
-                        if (/\/item/.test(path)) markers.push('/item');
-                        if (/\/towar/.test(path)) markers.push('/towar');
-                        if (/\/i\//.test(path)) markers.push('/i/');
+                        if (/\\/p\\//.test(path)) markers.push('/p/');
+                        if (/\\/product/.test(path)) markers.push('/product');
+                        if (/\\/produkt/.test(path)) markers.push('/produkt');
+                        if (/\\/item/.test(path)) markers.push('/item');
+                        if (/\\/towar/.test(path)) markers.push('/towar');
+                        if (/\\/i\\//.test(path)) markers.push('/i/');
                         if (/\\.html$/.test(path)) markers.push('.html');
                         if (/\\.htm$/.test(path)) markers.push('.htm');
-                        if (/\/\\d{4,}/.test(path)) markers.push('/ID (numeric)');
+                        if (/\\/\\d{4,}/.test(path)) markers.push('/ID (numeric)');
                         if (/_\\d{4,}/.test(path)) markers.push('_ID (numeric)');
                         
                         // Also check query params

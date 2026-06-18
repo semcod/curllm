@@ -9,8 +9,6 @@ New code should use:
 # Re-export from new package for backward compatibility
 from curllm_core.form_fill import (
     parse_form_pairs,
-    robust_fill_field as _robust_fill_field_new,
-    deterministic_form_fill,
 )
 
 # Keep old function signatures for compatibility

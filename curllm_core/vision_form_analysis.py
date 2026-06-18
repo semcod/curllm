@@ -10,8 +10,7 @@ Uses LLM with vision capabilities to:
 """
 
 import json
-from typing import Dict, List, Any, Optional
-from pathlib import Path
+from typing import Dict, List, Any
 
 
 async def analyze_form_fields_vision(

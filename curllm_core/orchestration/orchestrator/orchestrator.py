@@ -538,7 +538,10 @@ class Orchestrator:
             from curllm_logs import ScreenshotInfo
             ss_info = ScreenshotInfo(
                 path=path,
-                name=name,
+                filename=os.path.basename(path),
+                step_index=-1,  # Manual screenshot
+                step_type="screenshot",
+                timestamp=datetime.now(),
                 description=f"Screenshot: {name}",
             )
             self.screenshot_manager.screenshots.append(ss_info)

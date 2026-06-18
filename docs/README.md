@@ -10,6 +10,7 @@ Welcome to the **curllm** documentation! This directory contains comprehensive g
 
 - **[Installation Guide](Installation.md)** - Get curllm up and running
 - **[Examples](EXAMPLES.md)** - Practical use cases and code samples
+- **[Migration to v2](MIGRATION_V2.md)** - 🆕 LLM-driven API without hardcoded selectors
 - **[Hierarchical Planner](HIERARCHICAL_PLANNER.md)** - 87% token reduction with intelligent planning
 - **[Form Filling](FORM_FILLING.md)** - Automated form completion
 - **[API Reference](API.md)** - REST API endpoints

@@ -1,0 +1,64 @@
+flowchart TD
+%% generated in 0.06s
+
+    %% Entry points (blue)
+    classDef entry fill:#4dabf7,stroke:#1971c2,color:#fff
+
+    subgraph CLI
+        curllm_core__cli__web__main["main"]
+        curllm_core__cli__feedback__main["main"]
+        curllm_core__cli__setup__print_header["print_header"]
+        curllm_core__cli__setup__print_step["print_step"]
+        curllm_core__cli__setup__print_success["print_success"]
+        curllm_core__cli__setup__print_error["print_error"]
+        curllm_core__cli__setup__print_warning["print_warning"]
+        curllm_core__cli__setup__check_python_version["check_python_version"]
+        curllm_core__cli__setup__check_command["check_command"]
+        curllm_core__cli__setup__install_playwright_browsers["install_playwright_browsers"]
+        curllm_core__cli__setup__setup_directories["setup_directories"]
+        curllm_core__cli__setup__create_env_file["create_env_file"]
+        curllm_core__cli__setup__check_ollama["check_ollama"]
+        curllm_core__cli__setup__main["main"]
+        curllm_core__cli__flow___configure_diagnostics["_configure_diagnostics"]
+        ...["+23 more"]
+    end
+
+    subgraph Core
+        monitoring__website_monitor__matches_issue["matches_issue"]
+        monitoring__website_monitor__run_check["run_check"]
+        monitoring__website_monitor__install_cron["install_cron"]
+        monitoring__website_monitor__remove_cron["remove_cron"]
+        monitoring__website_monitor__usage["usage"]
+        monitoring__website_monitor__ISSUE_PATTERNS["ISSUE_PATTERNS"]
+        captcha__playwright_bql_framework__BQLExecutor__run["run"]
+        captcha__playwright_bql_framework__BQLExecutor___run_action["_run_action"]
+        captcha__playwright_bql_framework__BQLAgent__run_instruction["run_instruction"]
+        captcha__playwright_bql_framework__BQLAgent___build_prompt["_build_prompt"]
+        captcha__playwright_bql_framework__call_llm_placeholder["call_llm_placeholder"]
+        captcha__playwright_bql_framework__call_llm_ollama["call_llm_ollama"]
+        captcha__playwright_bql_framework__call_llm_openai["call_llm_openai"]
+        captcha__playwright_bql_framework___parse_actions_from_llm{{_parse_actions_from_llm CC=19}}
+        wordpress_batch__batch_create_posts["batch_create_posts"]
+        ...["+1777 more"]
+    end
+
+    subgraph Exporters
+        curllm_core__feedback__FeedbackSystem__export_hints["export_hints"]
+        curllm_core__metrics__MetricsCollector__export_report["export_report"]
+        curllm_core__data_export__export_excel__export_excel["export_excel"]
+        curllm_core__data_export__export_csv__export_csv["export_csv"]
+        curllm_core__data_export__export_markdown__export_markdown["export_markdown"]
+        curllm_core__data_export__export_json__export_json["export_json"]
+        curllm_core__data_export__data_exporter__DataExporter__to_json["to_json"]
+        curllm_core__data_export__data_exporter__DataExporter__to_jsonl["to_jsonl"]
+        curllm_core__data_export__data_exporter__DataExporter__to_csv["to_csv"]
+        curllm_core__data_export__data_exporter__DataExporter__to_xml["to_xml"]
+        curllm_core__data_export__data_exporter__DataExporter__to_markdown["to_markdown"]
+        curllm_core__data_export__data_exporter__DataExporter__to_html["to_html"]
+        curllm_core__data_export__data_exporter__DataExporter__to_yaml["to_yaml"]
+        curllm_core__data_export__data_exporter__DataExporter__to_excel["to_excel"]
+        curllm_core__data_export__data_exporter__DataExporter__to_sqlite["to_sqlite"]
+        ...["+1 more"]
+    end
+
+    class monitoring__website_monitor__matches_issue,monitoring__website_monitor__run_check,monitoring__website_monitor__install_cron,monitoring__website_monitor__remove_cron,monitoring__website_monitor__usage,monitoring__website_monitor__ISSUE_PATTERNS,captcha__playwright_bql_framework__BQLExecutor__run,captcha__playwright_bql_framework__BQLExecutor___run_action,captcha__playwright_bql_framework__BQLAgent__run_instruction,captcha__playwright_bql_framework__BQLAgent___build_prompt entry

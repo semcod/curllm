@@ -1,0 +1,51 @@
+integration:
+  auto_fix: false
+  create_github_issues: false
+  default_labels:
+  - projektor
+  - auto-reported
+  enabled: true
+  github_repo: null
+  global_handler: true
+  ignore_errors:
+  - KeyboardInterrupt
+  - SystemExit
+  ignore_patterns:
+  - '*.pyc'
+  - __pycache__
+  - .git
+  - .venv
+  - venv
+  - '*.egg-info'
+  - .projektor
+  - htmlcov
+  - .coverage
+  - '*.log'
+  notify_on_error: true
+  notify_on_fix: true
+  priority: high
+  report_file: .projektor/errors.log
+  report_to_console: true
+  report_to_file: true
+  state_file: .projektor/state.json
+  tickets_dir: .projektor/tickets
+  watch_paths:
+  - src
+  - tests
+  workflows: {}
+orchestration:
+  auto_commit: true
+  max_iterations: 10
+  run_tests: true
+project:
+  authors: []
+  created_at: '2026-01-26T16:21:58.733856'
+  description: ''
+  language: python
+  name: curllm
+  repository: null
+  updated_at: '2026-01-26T16:21:58.733860'
+  version: 0.1.0
+targets:
+  max_complexity: 15
+  min_coverage: 85

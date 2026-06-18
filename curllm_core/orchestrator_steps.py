@@ -8,7 +8,6 @@ Each step type has its own executor function for better maintainability.
 import asyncio
 import logging
 from typing import Any, Dict, Optional
-from datetime import datetime
 
 from .task_planner import StepType, TaskStep
 from .command_parser import ParsedCommand

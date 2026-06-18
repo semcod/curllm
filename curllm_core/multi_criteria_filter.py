@@ -18,7 +18,7 @@ Supports:
 Complete transparency: logs all decisions, filtering stages, reasons.
 """
 
-from typing import Dict, List, Optional, Any
+from typing import Dict, List, Any
 import json
 from .instruction_parser import InstructionParser
 from .universal_field_extractor import UniversalFieldExtractor

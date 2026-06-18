@@ -211,7 +211,7 @@ class DynamicContainerDetector:
             const cartPatterns = ['twój pc', 'twój koszyk', 'your cart', 'shopping cart', 'zaloguj', 'login', 'menu główne', 'nawigacja', 'katalog produktów', 'konfigurator'];
             const hasCartPattern = cartPatterns.some(p => text.includes(p));
             // Check for empty cart prices (0,00 zł)
-            const hasZeroPrice = /0,00\s*zł|0\.00/i.test(text);
+            const hasZeroPrice = /0,00\\s*zł|0\\.00/i.test(text);
             // If has cart pattern OR has zero price with short text = cart/nav element
             return (hasCartPattern && text.length < 150) || (hasZeroPrice && text.length < 50);
         }}
@@ -282,11 +282,11 @@ class DynamicContainerDetector:
                 const hasCssKeywords = sampleText.includes('color:') || sampleText.includes('font-size:') || 
                                        sampleText.includes('margin:') || sampleText.includes('padding:') ||
                                        sampleText.includes('@media') || sampleText.includes('position:');
-                const hasCssPattern = /\.[a-zA-Z_-]+\s*\{{/.test(sampleText);
+                const hasCssPattern = /\\.[a-zA-Z_-]+\\s*\\{{/.test(sampleText);
                 const isCssContent = hasCurlyBraces || hasCssKeywords || hasCssPattern;
                 const isScriptContent = sampleText.includes('function') || 
                                         sampleText.includes('var ') ||
-                                        /\bif\s*\(/.test(sampleText);
+                                        /\\bif\\s*\\(/.test(sampleText);
                 
                 // Skip CSS/script containers entirely
                 if (isCssContent || isScriptContent) continue;
@@ -301,8 +301,8 @@ class DynamicContainerDetector:
                 productScore -= cartElements * 20;
                 
                 // Bonus for elements with product-like text (names, brands, specs)
-                const hasProductText = /[A-Z][a-z]+\s+[A-Z0-9]/.test(sampleText) ||
-                                       /\d+\s*(GB|TB|GHz|MHz|W|mAh|mm|cm|kg)/i.test(sampleText);
+                const hasProductText = /[A-Z][a-z]+\\s+[A-Z0-9]/.test(sampleText) ||
+                                       /\\d+\\s*(GB|TB|GHz|MHz|W|mAh|mm|cm|kg)/i.test(sampleText);
                 if (hasProductText) productScore += 25;
                 
                 candidates.push({{

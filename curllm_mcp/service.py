@@ -225,8 +225,27 @@ class CurllmService:
 
         prefer_api = use_api if use_api is not None else os.getenv("CURLLM_MCP_USE_API", "0") == "1"
         if prefer_api:
-            return self._execute_via_api(payload)
-        return self._execute_in_process(payload)
+            result = self._execute_via_api(payload)
+        else:
+            result = self._execute_in_process(payload)
+
+        try:
+            from curllm_mcp.testql_export import maybe_write_testql_scenario
+
+            testql_path = maybe_write_testql_scenario(
+                instruction=instruction,
+                url=target_url,
+                result=result,
+                captcha_solver=captcha_solver,
+                visual_mode=visual_mode,
+            )
+            if testql_path is not None:
+                result = dict(result)
+                result["testql_scenario"] = str(testql_path)
+        except ImportError:
+            pass
+
+        return result
 
     def extract(self, url: str, instruction: str, **kwargs: Any) -> dict[str, Any]:
         prompt = instruction.strip() or "extract page title, summary and all links"

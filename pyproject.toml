@@ -43,6 +43,13 @@ Issues = "https://github.com/wronai/curllm/issues"
 mcp = [
   "mcp>=1.0.0",
 ]
+testql = [
+  "testql>=1.2.55",
+]
+browser = [
+  "testql>=1.2.55",
+  "playwright>=1.40.0",
+]
 
 [project.scripts]
 curllm-setup = "curllm_core.cli.setup:main"

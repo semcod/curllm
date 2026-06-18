@@ -1,0 +1,689 @@
+# redup/duplication | 92 groups | 529f 87520L | 2026-06-06
+
+SUMMARY:
+  files_scanned: 529
+  total_lines:   87520
+  dup_groups:    92
+  dup_fragments: 231
+  saved_lines:   1311
+  scan_ms:       6710
+
+HOTSPOTS[7] (files with most duplication):
+  bql/parser/bql_parser.py  dup=159L  groups=12  frags=12  (0.2%)
+  curllm_core/streamware/components/bql/parser.py  dup=153L  groups=16  frags=16  (0.2%)
+  curllm_core/bql/bql_parser.py  dup=122L  groups=14  frags=14  (0.1%)
+  curllm_core/llm_factory.py  dup=79L  groups=3  frags=7  (0.1%)
+  curllm_core/streamware/components/bql/executor.py  dup=65L  groups=5  frags=5  (0.1%)
+  curllm_core/bql/bql_executor.py  dup=63L  groups=7  frags=7  (0.1%)
+  bql/executor/bql_executor.py  dup=61L  groups=4  frags=4  (0.1%)
+
+DUPLICATES[92] (ranked by impact):
+  [704f0b43608ee42c] ! STRU  _log  L=10 N=7 saved=60 sim=1.00
+      curllm_core/dsl/executor_llm/llmdsl_executor.py:318-327  (_log)
+      curllm_core/extraction/extractor_llm/llm_extractor.py:247-256  (_log)
+      curllm_core/orchestrators/auth_llm/llm_auth_orchestrator.py:326-335  (_log)
+      curllm_core/orchestrators/ecommerce_llm/llme_commerce_orchestrator.py:275-284  (_log)
+      curllm_core/orchestrators/form_llm/llm_form_orchestrator.py:180-189  (_log)
+      curllm_core/orchestrators/social_llm/llm_social_orchestrator.py:425-434  (_log)
+      curllm_core/url_resolution/resolver.py:1170-1179  (_log)
+  [d34d537893db9598] ! EXAC  _parse_value  L=28 N=3 saved=56 sim=1.00
+      bql/parser/bql_parser.py:176-203  (_parse_value)
+      curllm_core/bql/bql_parser.py:110-124  (_parse_value)
+      curllm_core/streamware/components/bql/parser.py:172-187  (_parse_value)
+  [c7c09727f01d9255] ! EXAC  _execute_action  L=27 N=3 saved=54 sim=1.00
+      bql/executor/bql_executor.py:107-133  (_execute_action)
+      curllm_core/bql/bql_executor.py:76-95  (_execute_action)
+      curllm_core/streamware/components/bql/executor.py:114-140  (_execute_action)
+  [79dc66ae22daa69d] ! EXAC  _llm_generate  L=11 N=5 saved=44 sim=1.00
+      curllm_core/streamware/components/extraction/container_finder.py:231-241  (_llm_generate)
+      curllm_core/streamware/components/extraction/field_detector.py:261-271  (_llm_generate)
+      curllm_core/streamware/components/extraction/llm_patterns.py:595-605  (_llm_generate)
+      curllm_core/streamware/components/extraction/page_analyzer.py:205-215  (_llm_generate)
+      curllm_core/streamware/components/llm_decision.py:357-367  (_llm_generate)
+  [79bb3e95cf5a0f02] ! STRU  _log  L=13 N=4 saved=39 sim=1.00
+      curllm_core/orchestrators/auth.py:726-738  (_log)
+      curllm_core/orchestrators/form.py:433-445  (_log)
+      curllm_core/orchestrators/master.py:546-558  (_log)
+      curllm_core/orchestrators/social.py:651-663  (_log)
+  [3ea00c25caade0be] ! EXAC  _parse_arguments  L=19 N=3 saved=38 sim=1.00
+      bql/parser/bql_parser.py:156-174  (_parse_arguments)
+      curllm_core/bql/bql_parser.py:97-108  (_parse_arguments)
+      curllm_core/streamware/components/bql/parser.py:158-170  (_parse_arguments)
+  [915b2d8c690639fb] ! EXAC  _extract_from_element  L=18 N=3 saved=36 sim=1.00
+      bql/executor/bql_executor.py:183-200  (_extract_from_element)
+      curllm_core/bql/bql_executor.py:136-148  (_extract_from_element)
+      curllm_core/streamware/components/bql/executor.py:188-203  (_extract_from_element)
+  [24a07badb1f839ce] ! STRU  example_with_anthropic  L=17 N=3 saved=34 sim=1.00
+      examples.py:335-351  (example_with_anthropic)
+      examples.py:354-370  (example_with_gemini)
+      examples.py:392-407  (example_with_deepseek)
+  [da39aed56997ae4b] ! EXAC  _log  L=11 N=4 saved=33 sim=1.00
+      curllm_core/orchestrators/ecommerce.py:448-458  (_log)
+      curllm_core/orchestrators/extraction.py:381-391  (_log)
+      curllm_core/orchestrators/live.py:597-607  (_log)
+      curllm_core/validation/task_validator/task_validator/task_validator.py:723-733  (_log)
+  [d86b8d2098a9e6dd] ! EXAC  _parse_object  L=16 N=3 saved=32 sim=1.00
+      bql/parser/bql_parser.py:218-233  (_parse_object)
+      curllm_core/bql/bql_parser.py:136-147  (_parse_object)
+      curllm_core/streamware/components/bql/parser.py:200-212  (_parse_object)
+  [e33f4e5b8622da3a]   STRU  extract_emails  L=28 N=2 saved=28 sim=1.00
+      curllm_core/streamware/components/extraction/extractor.py:58-85  (extract_emails)
+      curllm_core/streamware/components/extraction/extractor.py:124-156  (extract_phones)
+  [716cca631166a00e]   EXAC  _parse_operation  L=27 N=2 saved=27 sim=1.00
+      bql/parser/bql_parser.py:115-141  (_parse_operation)
+      curllm_core/streamware/components/bql/parser.py:130-148  (_parse_operation)
+  [08ff7d162e50dcee]   STRU  get_field_selectors  L=27 N=2 saved=27 sim=1.00
+      curllm_core/streamware/components/form/detect.py:71-97  (get_field_selectors)
+      curllm_core/streamware/components/form/submit.py:8-61  (get_clickable_buttons)
+  [0acaf10afec3cf22]   EXAC  _parse_array  L=12 N=3 saved=24 sim=1.00
+      bql/parser/bql_parser.py:205-216  (_parse_array)
+      curllm_core/bql/bql_parser.py:126-134  (_parse_array)
+      curllm_core/streamware/components/bql/parser.py:189-198  (_parse_array)
+  [d93615118be4193f]   EXAC  _parse_selection_set  L=12 N=3 saved=24 sim=1.00
+      bql/parser/bql_parser.py:235-246  (_parse_selection_set)
+      curllm_core/bql/bql_parser.py:149-157  (_parse_selection_set)
+      curllm_core/streamware/components/bql/parser.py:214-223  (_parse_selection_set)
+  [a0ce81f2c52a717f]   EXAC  _log  L=8 N=4 saved=24 sim=1.00
+      curllm_core/dynamic_container_detector.py:41-48  (_log)
+      curllm_core/llm_container_validator.py:34-41  (_log)
+      curllm_core/llm_filter_validator.py:32-39  (_log)
+      curllm_core/multi_criteria_filter.py:82-89  (_log)
+  [9dce071a86e8270f]   EXAC  get_llm  L=8 N=4 saved=24 sim=1.00
+      examples/url_resolver/example_auto_detect.py:22-29  (get_llm)
+      examples/url_resolver/example_find_contact.py:25-32  (get_llm)
+      examples/url_resolver/example_find_info.py:21-28  (get_llm)
+      examples/url_resolver/example_find_products.py:25-32  (get_llm)
+  [60a228bb57484209]   STRU  is_form_task  L=23 N=2 saved=23 sim=1.00
+      curllm_core/context_optimizer.py:208-230  (is_form_task)
+      curllm_core/hierarchical/planner.py:124-152  (requires_multi_step)
+  [35a0f09add02a28f]   STRU  _create_openai_client  L=11 N=3 saved=22 sim=1.00
+      curllm_core/llm_factory.py:130-140  (_create_openai_client)
+      curllm_core/llm_factory.py:167-177  (_create_groq_client)
+      curllm_core/llm_factory.py:180-190  (_create_deepseek_client)
+  [e8be5ebdebfe0ef5]   STRU  example_orchestrator  L=21 N=2 saved=21 sim=1.00
+      examples/v2_usage.py:51-71  (example_orchestrator)
+      examples/v2_usage.py:103-122  (example_extraction)
+  [504b70ac6f3973a7]   EXAC  _ensure_writable_base  L=20 N=2 saved=20 sim=1.00
+      curllm_core/browser_setup.py:20-39  (_ensure_writable_base)
+      curllm_core/streamware/components/browser/setup.py:25-45  (_ensure_writable_base)
+  [48528b8454f26fad]   STRU  find_element_with_llm  L=20 N=2 saved=20 sim=1.00
+      curllm_core/element_finder/find.py:8-27  (find_element_with_llm)
+      curllm_core/element_finder/finder/find_element_with_llm.py:10-18  (find_element_with_llm)
+  [b9374d4cde60adff]   EXAC  _normalize_polish  L=9 N=3 saved=18 sim=1.00
+      curllm_core/parsing/parser.py:394-402  (_normalize_polish)
+      curllm_core/url_resolution/goal_detector_llm/goal_detector_hybrid.py:235-243  (_normalize_polish)
+      curllm_core/url_resolution/resolver.py:106-114  (_normalize_polish)
+  [ae42d93603e87620]   STRU  get_feedback_system  L=6 N=4 saved=18 sim=1.00
+      curllm_core/feedback.py:352-357  (get_feedback_system)
+      curllm_core/metrics.py:325-330  (get_metrics_collector)
+      curllm_core/streamware/llm_client.py:271-276  (get_llm)
+      functions/patterns/registry.py:310-315  (get_registry)
+  [9a775fb33283373e]   STRU  _parse_json_response  L=18 N=2 saved=18 sim=1.00
+      curllm_core/streamware/components/extraction/llm_patterns.py:608-625  (_parse_json_response)
+      curllm_core/streamware/components/extraction/page_analyzer.py:218-235  (_parse_json_response)
+  [bc3eb6483304588e]   STRU  main  L=18 N=2 saved=18 sim=1.00
+      examples/bql/contact_form.py:16-33  (main)
+      examples/bql/product_search.py:16-32  (main)
+  [2937a1f9010e8792]   STRU  default_log_dir  L=17 N=2 saved=17 sim=1.00
+      curllm_core/orchestration/orchestrator/orchestrator_config.py:6-22  (default_log_dir)
+      curllm_core/orchestration/orchestrator/orchestrator_config.py:25-41  (default_screenshot_dir)
+  [768f38085fb8fa38]   EXAC  parse  L=16 N=2 saved=16 sim=1.00
+      bql/parser/bql_parser.py:14-29  (parse)
+      curllm_core/bql/bql_parser.py:13-22  (parse)
+  [6c987b6faffc9c14]   EXAC  __init__  L=8 N=3 saved=16 sim=1.00
+      curllm_core/orchestrators/auth_llm/llm_auth_orchestrator.py:21-28  (__init__)
+      curllm_core/orchestrators/ecommerce_llm/llme_commerce_orchestrator.py:21-28  (__init__)
+      curllm_core/orchestrators/form_llm/llm_form_orchestrator.py:17-24  (__init__)
+  [2066c73bad9160ae]   STRU  capture_page  L=3 N=6 saved=15 sim=1.00
+      curllm_core/screenshots.py:19-21  (capture_page)
+      curllm_core/screenshots.py:24-26  (capture_element)
+      curllm_core/streamware/components/config/__init__.py:14-16  (get_logger)
+      curllm_core/streamware/components/page/__init__.py:6-8  (extract_page_context)
+      curllm_core/streamware/components/page/__init__.py:10-12  (auto_scroll)
+      curllm_core/streamware/components/page/__init__.py:14-16  (detect_human_verify)
+  [7664549e347aec24]   EXAC  _preprocess  L=7 N=3 saved=14 sim=1.00
+      bql/parser/bql_parser.py:31-37  (_preprocess)
+      curllm_core/bql/bql_parser.py:24-27  (_preprocess)
+      curllm_core/streamware/components/bql/parser.py:72-76  (_preprocess)
+  [e9c86cdbc93e4aae]   STRU  get_user_agent  L=7 N=3 saved=14 sim=1.00
+      curllm_core/stealth.py:20-26  (get_user_agent)
+      curllm_core/streamware/components/browser/stealth.py:35-41  (get_user_agent)
+      curllm_server/stealth/stealth_config.py:24-30  (get_user_agent)
+  [88cb76e00bf0f018]   EXAC  execute  L=13 N=2 saved=13 sim=1.00
+      bql/executor/bql_executor.py:15-27  (execute)
+      curllm_core/bql/bql_executor.py:14-21  (execute)
+  [d657a8f3c0c6cec9]   EXAC  _parse_query_block  L=13 N=2 saved=13 sim=1.00
+      curllm_core/bql/bql_parser.py:48-60  (_parse_query_block)
+      curllm_core/streamware/components/bql/parser.py:100-113  (_parse_query_block)
+  [8446e9c713dba8d2]   EXAC  _parse_mutation_block  L=13 N=2 saved=13 sim=1.00
+      curllm_core/bql/bql_parser.py:62-74  (_parse_mutation_block)
+      curllm_core/streamware/components/bql/parser.py:115-128  (_parse_mutation_block)
+  [ae9f39113b0d6447]   STRU  __init__  L=13 N=2 saved=13 sim=1.00
+      curllm_core/llm_factory.py:250-262  (__init__)
+      curllm_core/llm_factory.py:304-316  (__init__)
+  [9702e8ac0ec1ec22]   STRU  example_2_data_extraction  L=13 N=2 saved=13 sim=1.00
+      examples/streamware/streamware_examples.py:40-52  (example_2_data_extraction)
+      examples_streamware.py:211-226  (example_10_http_to_scraping)
+  [9dd012c31e09274d]   STRU  main  L=13 N=2 saved=13 sim=1.00
+      examples/url_resolver/example_find_info.py:126-138  (main)
+      examples/url_resolver/example_shopping_flow.py:98-110  (main)
+  [0473f004363e9fca]   EXAC  _tokenize  L=6 N=3 saved=12 sim=1.00
+      bql/parser/bql_parser.py:39-44  (_tokenize)
+      curllm_core/bql/bql_parser.py:29-32  (_tokenize)
+      curllm_core/streamware/components/bql/parser.py:78-82  (_tokenize)
+  [a78a346e8c394a98]   EXAC  __init__  L=6 N=3 saved=12 sim=1.00
+      curllm_core/bql_extraction_orchestrator.py:13-18  (__init__)
+      curllm_core/extraction_orchestrator/extraction_orchestrator.py:9-14  (__init__)
+      curllm_core/streamware/components/bql/orchestrator.py:20-25  (__init__)
+  [71dc6285fd8d964b]   STRU  main  L=12 N=2 saved=12 sim=1.00
+      examples/url_resolver/example_find_contact.py:107-118  (main)
+      examples/url_resolver/example_find_products.py:99-110  (main)
+  [a5ff50652c75dac5]   EXAC  _match  L=5 N=3 saved=10 sim=1.00
+      bql/parser/bql_parser.py:46-50  (_match)
+      curllm_core/bql/bql_parser.py:34-37  (_match)
+      curllm_core/streamware/components/bql/parser.py:84-88  (_match)
+  [5ad857a545799f19]   EXAC  _parse_json_response  L=10 N=2 saved=10 sim=1.00
+      curllm_core/streamware/components/extraction/container_finder.py:244-253  (_parse_json_response)
+      curllm_core/streamware/components/extraction/field_detector.py:274-283  (_parse_json_response)
+  [970173da4dd589b0]   EXAC  _deep_get  L=10 N=2 saved=10 sim=1.00
+      curllm_core/validation/rules.py:304-313  (_deep_get)
+      curllm_core/validation/structural.py:379-388  (_deep_get)
+  [58a0c9197477b005]   STRU  _create_anthropic_client  L=10 N=2 saved=10 sim=1.00
+      curllm_core/llm_factory.py:143-152  (_create_anthropic_client)
+      curllm_core/llm_factory.py:155-164  (_create_gemini_client)
+  [1834f0a61e91df2e]   STRU  _handle_extract_emails  L=10 N=2 saved=10 sim=1.00
+      curllm_core/task_runner_tools.py:141-150  (_handle_extract_emails)
+      curllm_core/task_runner_tools.py:153-162  (_handle_extract_phones)
+  [ae1a64131be97c2e]   EXAC  _prune_nulls  L=9 N=2 saved=9 sim=1.00
+      curllm_core/llm_planner.py:26-34  (_prune_nulls)
+      curllm_core/running/runner.py:584-592  (_prune_nulls)
+  [044fba3995820253]   EXAC  _parse_simple_instruction  L=8 N=2 saved=8 sim=1.00
+      bql/parser/bql_parser.py:248-255  (_parse_simple_instruction)
+      curllm_core/streamware/components/bql/parser.py:225-231  (_parse_simple_instruction)
+  [d88b86abc860c637]   EXAC  _consume  L=8 N=2 saved=8 sim=1.00
+      curllm_core/bql/bql_parser.py:39-46  (_consume)
+      curllm_core/streamware/components/bql/parser.py:90-98  (_consume)
+  [77014e8f12648459]   EXAC  __init__  L=4 N=3 saved=8 sim=1.00
+      curllm_core/orchestrators/ecommerce.py:52-55  (__init__)
+      curllm_core/orchestrators/extraction.py:29-32  (__init__)
+      curllm_core/orchestrators/form.py:41-44  (__init__)
+  [ef80ecd07977ab93]   EXAC  run_async  L=8 N=2 saved=8 sim=1.00
+      forms/app.py:263-270  (run_async)
+      pricing/app.py:492-499  (run_async)
+  [882ee845cde8a72d]   STRU  _log_error  L=4 N=3 saved=8 sim=1.00
+      curllm_core/bql_extraction_orchestrator.py:341-344  (_log_error)
+      curllm_core/extraction_orchestrator/extraction_orchestrator.py:439-442  (_log_error)
+      curllm_core/streamware/components/bql/orchestrator.py:235-238  (_log_error)
+  [d3ac5d25216b9611]   STRU  find_login_url  L=4 N=3 saved=8 sim=1.00
+      curllm_core/dynamic/urls.py:106-109  (find_login_url)
+      curllm_core/dynamic/urls.py:112-115  (find_contact_url)
+      curllm_core/dynamic/urls.py:118-121  (find_cart_url)
+  [7529f562d53ac4e6]   STRU  parse_command  L=4 N=3 saved=8 sim=1.00
+      curllm_core/parsing/parser.py:451-454  (parse_command)
+      curllm_core/planning/planner.py:543-546  (create_plan)
+      curllm_core/streamware/yaml_runner.py:266-277  (validate_yaml_flow)
+  [fbedd43f2f139384]   STRU  query_exists  L=8 N=2 saved=8 sim=1.00
+      curllm_core/streamware/components/dom/query.py:124-131  (query_exists)
+      curllm_core/streamware/components/dom/query.py:134-146  (query_visible)
+  [e4231736c97d860a]   STRU  list_available_components  L=8 N=2 saved=8 sim=1.00
+      curllm_core/streamware/helpers/list_available_components.py:8-15  (list_available_components)
+      curllm_core/streamware/registry.py:119-126  (list_available_components)
+  [740df5c15cf3ad5d]   EXAC  _strip_fences  L=7 N=2 saved=7 sim=1.00
+      captcha/playwright_bql_framework.py:520-526  (_strip_fences)
+      curllm_core/llm_planner.py:249-257  (_strip_fences)
+  [ef4c5a3e9aafc0a0]   EXAC  _execute_query  L=7 N=2 saved=7 sim=1.00
+      curllm_core/bql/bql_executor.py:23-29  (_execute_query)
+      curllm_core/streamware/components/bql/executor.py:49-56  (_execute_query)
+  [7b3574f03ac64a76]   EXAC  __init__  L=7 N=2 saved=7 sim=1.00
+      curllm_core/browser_setup.py:12-18  (__init__)
+      curllm_core/streamware/components/browser/setup.py:18-23  (__init__)
+  [476b3660295dd35c]   EXAC  is_session_valid  L=7 N=2 saved=7 sim=1.00
+      curllm_core/browser_setup.py:70-76  (is_session_valid)
+      curllm_core/streamware/components/browser/setup.py:75-82  (is_session_valid)
+  [afd8aed14921ad91]   EXAC  execute_command  L=7 N=2 saved=7 sim=1.00
+      curllm_core/orchestration/execute.py:9-15  (execute_command)
+      curllm_core/orchestration/orchestrator/execute_command.py:22-28  (execute_command)
+  [9878c5e74d2e0d27]   EXAC  list_models  L=7 N=2 saved=7 sim=1.00
+      curllm_core/server.py:222-228  (list_models)
+      curllm_server/routes/models.py:11-18  (list_models)
+  [c9441ffd12c727b1]   STRU  detect_goal_intelligent  L=7 N=2 saved=7 sim=1.00
+      curllm_core/goal_detector_llm.py:389-395  (detect_goal_intelligent)
+      curllm_core/url_resolution/goal_detector_llm/detect_navigation_goal.py:10-25  (detect_navigation_goal)
+  [24fed6353056d6b8]   STRU  get_filler  L=7 N=2 saved=7 sim=1.00
+      forms/app.py:254-260  (get_filler)
+      pricing/app.py:483-489  (get_comparator)
+  [5046bb1b33b004e5]   EXAC  __init__  L=3 N=3 saved=6 sim=1.00
+      bql/parser/bql_parser.py:10-12  (__init__)
+      curllm_core/bql/bql_parser.py:9-11  (__init__)
+      curllm_core/streamware/components/bql/parser.py:47-49  (__init__)
+  [3dd5ece683e1bf48]   EXAC  __post_init__  L=3 N=3 saved=6 sim=1.00
+      bql/types/bql_node.py:17-19  (__post_init__)
+      curllm_core/bql/bql_node.py:16-18  (__post_init__)
+      curllm_core/streamware/components/bql/parser.py:32-34  (__post_init__)
+  [37ebb342eed05d89]   EXAC  _execute_mutation  L=6 N=2 saved=6 sim=1.00
+      curllm_core/bql/bql_executor.py:31-36  (_execute_mutation)
+      curllm_core/streamware/components/bql/executor.py:58-64  (_execute_mutation)
+  [cc53a0f80d8cdf25]   EXAC  _execute_selections  L=6 N=2 saved=6 sim=1.00
+      curllm_core/bql/bql_executor.py:97-102  (_execute_selections)
+      curllm_core/streamware/components/bql/executor.py:142-148  (_execute_selections)
+  [88bde14c3f88da24]   EXAC  _parse_action  L=6 N=2 saved=6 sim=1.00
+      curllm_core/bql/bql_parser.py:90-95  (_parse_action)
+      curllm_core/streamware/components/bql/parser.py:150-156  (_parse_action)
+  [bdbc086ba48e4471]   EXAC  _is_product_task  L=6 N=2 saved=6 sim=1.00
+      curllm_core/bql_extraction_orchestrator.py:20-25  (_is_product_task)
+      curllm_core/streamware/components/bql/orchestrator.py:27-33  (_is_product_task)
+  [6a6ef4dbc4afa3f9]   EXAC  _log_header  L=6 N=2 saved=6 sim=1.00
+      curllm_core/bql_extraction_orchestrator.py:323-328  (_log_header)
+      curllm_core/extraction_orchestrator/extraction_orchestrator.py:421-426  (_log_header)
+  [9af0797652d8b7e6]   EXAC  load_session_metadata  L=6 N=2 saved=6 sim=1.00
+      curllm_core/browser_setup.py:63-68  (load_session_metadata)
+      curllm_core/streamware/components/browser/setup.py:67-73  (load_session_metadata)
+  [da76f6db7686c1f4]   EXAC  __init__  L=3 N=3 saved=6 sim=1.00
+      curllm_core/deprecated/hybrid_selector_ranker.py:26-28  (__init__)
+      curllm_core/llm_container_validator.py:30-32  (__init__)
+      curllm_core/llm_filter_validator.py:28-30  (__init__)
+  [a66d5fa8b3ce6415]   STRU  print_fail  L=6 N=2 saved=6 sim=1.00
+      curllm_core/cli/doctor.py:30-35  (print_fail)
+      curllm_core/cli/doctor.py:38-43  (print_warn)
+  [2a6847fd53a1d7d9]   STRU  export_csv  L=3 N=3 saved=6 sim=1.00
+      curllm_core/data_export/export_csv.py:10-12  (export_csv)
+      curllm_core/data_export/export_json.py:10-12  (export_json)
+      curllm_core/data_export/export_markdown.py:10-12  (export_markdown)
+  [ae7f50eb1f9457e9]   STRU  _log  L=6 N=2 saved=6 sim=1.00
+      curllm_core/detection/detector.py:56-61  (_log)
+      curllm_core/detection/detector.py:430-434  (_log)
+  [c6eefafb6f0b86ba]   STRU  index  L=3 N=3 saved=6 sim=1.00
+      curllm_web/routes/main.py:9-11  (index)
+      forms/app.py:276-278  (index)
+      pricing/app.py:505-507  (index)
+  [e6f3bf1707a60c9b]   EXAC  _log_decision  L=5 N=2 saved=5 sim=1.00
+      curllm_core/bql_extraction_orchestrator.py:335-339  (_log_decision)
+      curllm_core/extraction_orchestrator/extraction_orchestrator.py:433-437  (_log_decision)
+  [9cbdb4295d031522]   EXAC  print_header  L=5 N=2 saved=5 sim=1.00
+      curllm_core/cli/doctor.py:13-17  (print_header)
+      curllm_core/cli/setup.py:11-15  (print_header)
+  [33d7460a7bed998a]   EXAC  _log  L=5 N=2 saved=5 sim=1.00
+      curllm_core/dom_toolkit/orchestrator/task_router.py:88-92  (_log)
+      curllm_core/dsl/executor.py:119-123  (_log)
+  [aec8535761a29bd2]   EXAC  __init__  L=5 N=2 saved=5 sim=1.00
+      curllm_core/orchestrators/auth.py:129-133  (__init__)
+      curllm_core/orchestrators/social.py:127-131  (__init__)
+  [d9378371f9f82cea]   EXAC  _log_phase  L=4 N=2 saved=4 sim=1.00
+      curllm_core/bql_extraction_orchestrator.py:330-333  (_log_phase)
+      curllm_core/extraction_orchestrator/extraction_orchestrator.py:428-431  (_log_phase)
+  [5ed2c3e0a5141227]   EXAC  solve  L=4 N=2 saved=4 sim=1.00
+      curllm_core/captcha.py:18-21  (solve)
+      curllm_server/captcha/solver.py:18-25  (solve)
+  [d86d3f32ef19d467]   STRU  __init__  L=4 N=2 saved=4 sim=1.00
+      curllm_core/dsl/knowledge_base.py:58-61  (__init__)
+      curllm_core/feedback.py:86-89  (__init__)
+  [6751664347af4885]   STRU  validate_form_result  L=4 N=2 saved=4 sim=1.00
+      curllm_core/result_validation/validator.py:317-320  (validate_form_result)
+      curllm_core/result_validation/validator.py:323-326  (validate_strict)
+  [dedadd0b428750de]   STRU  get_logs  L=4 N=2 saved=4 sim=1.00
+      curllm_web/routes/logs.py:11-14  (get_logs)
+      curllm_web/routes/prompts.py:11-14  (get_prompts)
+  [c3d697c4063bbf4c]   EXAC  __init__  L=3 N=2 saved=3 sim=1.00
+      bql/executor/bql_executor.py:11-13  (__init__)
+      curllm_core/bql/bql_executor.py:10-12  (__init__)
+  [015bcb4c15c86ba9]   EXAC  __init__  L=3 N=2 saved=3 sim=1.00
+      curllm_core/detection/detector.py:426-428  (__init__)
+      curllm_core/wordpress.py:8-10  (__init__)
+  [e6b3ac07ca26b8e0]   EXAC  __init__  L=3 N=2 saved=3 sim=1.00
+      curllm_core/llm_dsl/atoms.py:37-39  (__init__)
+      curllm_core/llm_dsl/element_finder.py:43-45  (__init__)
+  [959f87118d4e399c]   STRU  print_success  L=3 N=2 saved=3 sim=1.00
+      curllm_core/cli/setup.py:23-25  (print_success)
+      curllm_core/cli/setup.py:33-35  (print_warning)
+  [143925889186b5ca]   STRU  get_registry  L=3 N=2 saved=3 sim=1.00
+      curllm_core/tools/registry.py:110-112  (get_registry)
+      functions/registry.py:261-263  (get_registry)
+  [b722247717551344]   STRU  health  L=3 N=2 saved=3 sim=1.00
+      forms/app.py:282-284  (health)
+      pricing/app.py:511-513  (health)
+
+REFACTOR[92] (ranked by priority):
+  [1] ○ extract_function   → curllm_core/utils/_log.py
+      WHY: 7 occurrences of 10-line block across 7 files — saves 60 lines
+      FILES: curllm_core/dsl/executor_llm/llmdsl_executor.py, curllm_core/extraction/extractor_llm/llm_extractor.py, curllm_core/orchestrators/auth_llm/llm_auth_orchestrator.py, curllm_core/orchestrators/ecommerce_llm/llme_commerce_orchestrator.py, curllm_core/orchestrators/form_llm/llm_form_orchestrator.py +2 more
+  [2] ○ extract_class      → utils/_parse_value.py
+      WHY: 3 occurrences of 28-line block across 3 files — saves 56 lines
+      FILES: bql/parser/bql_parser.py, curllm_core/bql/bql_parser.py, curllm_core/streamware/components/bql/parser.py
+  [3] ○ extract_class      → utils/_execute_action.py
+      WHY: 3 occurrences of 27-line block across 3 files — saves 54 lines
+      FILES: bql/executor/bql_executor.py, curllm_core/bql/bql_executor.py, curllm_core/streamware/components/bql/executor.py
+  [4] ○ extract_function   → curllm_core/streamware/components/utils/_llm_generate.py
+      WHY: 5 occurrences of 11-line block across 5 files — saves 44 lines
+      FILES: curllm_core/streamware/components/extraction/container_finder.py, curllm_core/streamware/components/extraction/field_detector.py, curllm_core/streamware/components/extraction/llm_patterns.py, curllm_core/streamware/components/extraction/page_analyzer.py, curllm_core/streamware/components/llm_decision.py
+  [5] ○ extract_function   → curllm_core/orchestrators/utils/_log.py
+      WHY: 4 occurrences of 13-line block across 4 files — saves 39 lines
+      FILES: curllm_core/orchestrators/auth.py, curllm_core/orchestrators/form.py, curllm_core/orchestrators/master.py, curllm_core/orchestrators/social.py
+  [6] ○ extract_class      → utils/_parse_arguments.py
+      WHY: 3 occurrences of 19-line block across 3 files — saves 38 lines
+      FILES: bql/parser/bql_parser.py, curllm_core/bql/bql_parser.py, curllm_core/streamware/components/bql/parser.py
+  [7] ○ extract_class      → utils/_extract_from_element.py
+      WHY: 3 occurrences of 18-line block across 3 files — saves 36 lines
+      FILES: bql/executor/bql_executor.py, curllm_core/bql/bql_executor.py, curllm_core/streamware/components/bql/executor.py
+  [8] ○ extract_function   → utils/example_with_anthropic.py
+      WHY: 3 occurrences of 17-line block across 1 files — saves 34 lines
+      FILES: examples.py
+  [9] ○ extract_function   → curllm_core/utils/_log.py
+      WHY: 4 occurrences of 11-line block across 4 files — saves 33 lines
+      FILES: curllm_core/orchestrators/ecommerce.py, curllm_core/orchestrators/extraction.py, curllm_core/orchestrators/live.py, curllm_core/validation/task_validator/task_validator/task_validator.py
+  [10] ○ extract_class      → utils/_parse_object.py
+      WHY: 3 occurrences of 16-line block across 3 files — saves 32 lines
+      FILES: bql/parser/bql_parser.py, curllm_core/bql/bql_parser.py, curllm_core/streamware/components/bql/parser.py
+  [11] ○ extract_function   → curllm_core/streamware/components/extraction/utils/extract_emails.py
+      WHY: 2 occurrences of 28-line block across 1 files — saves 28 lines
+      FILES: curllm_core/streamware/components/extraction/extractor.py
+  [12] ○ extract_class      → utils/_parse_operation.py
+      WHY: 2 occurrences of 27-line block across 2 files — saves 27 lines
+      FILES: bql/parser/bql_parser.py, curllm_core/streamware/components/bql/parser.py
+  [13] ○ extract_function   → curllm_core/streamware/components/form/utils/get_field_selectors.py
+      WHY: 2 occurrences of 27-line block across 2 files — saves 27 lines
+      FILES: curllm_core/streamware/components/form/detect.py, curllm_core/streamware/components/form/submit.py
+  [14] ○ extract_class      → utils/_parse_array.py
+      WHY: 3 occurrences of 12-line block across 3 files — saves 24 lines
+      FILES: bql/parser/bql_parser.py, curllm_core/bql/bql_parser.py, curllm_core/streamware/components/bql/parser.py
+  [15] ○ extract_class      → utils/_parse_selection_set.py
+      WHY: 3 occurrences of 12-line block across 3 files — saves 24 lines
+      FILES: bql/parser/bql_parser.py, curllm_core/bql/bql_parser.py, curllm_core/streamware/components/bql/parser.py
+  [16] ○ extract_function   → curllm_core/utils/_log.py
+      WHY: 4 occurrences of 8-line block across 4 files — saves 24 lines
+      FILES: curllm_core/dynamic_container_detector.py, curllm_core/llm_container_validator.py, curllm_core/llm_filter_validator.py, curllm_core/multi_criteria_filter.py
+  [17] ○ extract_function   → examples/url_resolver/utils/get_llm.py
+      WHY: 4 occurrences of 8-line block across 4 files — saves 24 lines
+      FILES: examples/url_resolver/example_auto_detect.py, examples/url_resolver/example_find_contact.py, examples/url_resolver/example_find_info.py, examples/url_resolver/example_find_products.py
+  [18] ○ extract_function   → curllm_core/utils/is_form_task.py
+      WHY: 2 occurrences of 23-line block across 2 files — saves 23 lines
+      FILES: curllm_core/context_optimizer.py, curllm_core/hierarchical/planner.py
+  [19] ○ extract_function   → curllm_core/utils/_create_openai_client.py
+      WHY: 3 occurrences of 11-line block across 1 files — saves 22 lines
+      FILES: curllm_core/llm_factory.py
+  [20] ○ extract_function   → examples/utils/example_orchestrator.py
+      WHY: 2 occurrences of 21-line block across 1 files — saves 21 lines
+      FILES: examples/v2_usage.py
+  [21] ○ extract_class      → curllm_core/utils/_ensure_writable_base.py
+      WHY: 2 occurrences of 20-line block across 2 files — saves 20 lines
+      FILES: curllm_core/browser_setup.py, curllm_core/streamware/components/browser/setup.py
+  [22] ○ extract_function   → curllm_core/element_finder/utils/find_element_with_llm.py
+      WHY: 2 occurrences of 20-line block across 2 files — saves 20 lines
+      FILES: curllm_core/element_finder/find.py, curllm_core/element_finder/finder/find_element_with_llm.py
+  [23] ○ extract_function   → curllm_core/utils/_normalize_polish.py
+      WHY: 3 occurrences of 9-line block across 3 files — saves 18 lines
+      FILES: curllm_core/parsing/parser.py, curllm_core/url_resolution/goal_detector_llm/goal_detector_hybrid.py, curllm_core/url_resolution/resolver.py
+  [24] ○ extract_function   → utils/get_feedback_system.py
+      WHY: 4 occurrences of 6-line block across 4 files — saves 18 lines
+      FILES: curllm_core/feedback.py, curllm_core/metrics.py, curllm_core/streamware/llm_client.py, functions/patterns/registry.py
+  [25] ○ extract_function   → curllm_core/streamware/components/extraction/utils/_parse_json_response.py
+      WHY: 2 occurrences of 18-line block across 2 files — saves 18 lines
+      FILES: curllm_core/streamware/components/extraction/llm_patterns.py, curllm_core/streamware/components/extraction/page_analyzer.py
+  [26] ○ extract_function   → examples/bql/utils/main.py
+      WHY: 2 occurrences of 18-line block across 2 files — saves 18 lines
+      FILES: examples/bql/contact_form.py, examples/bql/product_search.py
+  [27] ○ extract_function   → curllm_core/orchestration/orchestrator/utils/default_log_dir.py
+      WHY: 2 occurrences of 17-line block across 1 files — saves 17 lines
+      FILES: curllm_core/orchestration/orchestrator/orchestrator_config.py
+  [28] ○ extract_class      → utils/parse.py
+      WHY: 2 occurrences of 16-line block across 2 files — saves 16 lines
+      FILES: bql/parser/bql_parser.py, curllm_core/bql/bql_parser.py
+  [29] ○ extract_function   → curllm_core/orchestrators/utils/__init__.py
+      WHY: 3 occurrences of 8-line block across 3 files — saves 16 lines
+      FILES: curllm_core/orchestrators/auth_llm/llm_auth_orchestrator.py, curllm_core/orchestrators/ecommerce_llm/llme_commerce_orchestrator.py, curllm_core/orchestrators/form_llm/llm_form_orchestrator.py
+  [30] ○ extract_function   → curllm_core/utils/capture_page.py
+      WHY: 6 occurrences of 3-line block across 3 files — saves 15 lines
+      FILES: curllm_core/screenshots.py, curllm_core/streamware/components/config/__init__.py, curllm_core/streamware/components/page/__init__.py
+  [31] ○ extract_class      → utils/_preprocess.py
+      WHY: 3 occurrences of 7-line block across 3 files — saves 14 lines
+      FILES: bql/parser/bql_parser.py, curllm_core/bql/bql_parser.py, curllm_core/streamware/components/bql/parser.py
+  [32] ○ extract_class      → utils/get_user_agent.py
+      WHY: 3 occurrences of 7-line block across 3 files — saves 14 lines
+      FILES: curllm_core/stealth.py, curllm_core/streamware/components/browser/stealth.py, curllm_server/stealth/stealth_config.py
+  [33] ○ extract_class      → utils/execute.py
+      WHY: 2 occurrences of 13-line block across 2 files — saves 13 lines
+      FILES: bql/executor/bql_executor.py, curllm_core/bql/bql_executor.py
+  [34] ○ extract_class      → curllm_core/utils/_parse_query_block.py
+      WHY: 2 occurrences of 13-line block across 2 files — saves 13 lines
+      FILES: curllm_core/bql/bql_parser.py, curllm_core/streamware/components/bql/parser.py
+  [35] ○ extract_class      → curllm_core/utils/_parse_mutation_block.py
+      WHY: 2 occurrences of 13-line block across 2 files — saves 13 lines
+      FILES: curllm_core/bql/bql_parser.py, curllm_core/streamware/components/bql/parser.py
+  [36] ○ extract_function   → curllm_core/utils/__init__.py
+      WHY: 2 occurrences of 13-line block across 1 files — saves 13 lines
+      FILES: curllm_core/llm_factory.py
+  [37] ○ extract_function   → utils/example_2_data_extraction.py
+      WHY: 2 occurrences of 13-line block across 2 files — saves 13 lines
+      FILES: examples/streamware/streamware_examples.py, examples_streamware.py
+  [38] ○ extract_function   → examples/url_resolver/utils/main.py
+      WHY: 2 occurrences of 13-line block across 2 files — saves 13 lines
+      FILES: examples/url_resolver/example_find_info.py, examples/url_resolver/example_shopping_flow.py
+  [39] ○ extract_class      → utils/_tokenize.py
+      WHY: 3 occurrences of 6-line block across 3 files — saves 12 lines
+      FILES: bql/parser/bql_parser.py, curllm_core/bql/bql_parser.py, curllm_core/streamware/components/bql/parser.py
+  [40] ○ extract_function   → curllm_core/utils/__init__.py
+      WHY: 3 occurrences of 6-line block across 3 files — saves 12 lines
+      FILES: curllm_core/bql_extraction_orchestrator.py, curllm_core/extraction_orchestrator/extraction_orchestrator.py, curllm_core/streamware/components/bql/orchestrator.py
+  [41] ○ extract_function   → examples/url_resolver/utils/main.py
+      WHY: 2 occurrences of 12-line block across 2 files — saves 12 lines
+      FILES: examples/url_resolver/example_find_contact.py, examples/url_resolver/example_find_products.py
+  [42] ○ extract_class      → utils/_match.py
+      WHY: 3 occurrences of 5-line block across 3 files — saves 10 lines
+      FILES: bql/parser/bql_parser.py, curllm_core/bql/bql_parser.py, curllm_core/streamware/components/bql/parser.py
+  [43] ○ extract_function   → curllm_core/streamware/components/extraction/utils/_parse_json_response.py
+      WHY: 2 occurrences of 10-line block across 2 files — saves 10 lines
+      FILES: curllm_core/streamware/components/extraction/container_finder.py, curllm_core/streamware/components/extraction/field_detector.py
+  [44] ○ extract_function   → curllm_core/validation/utils/_deep_get.py
+      WHY: 2 occurrences of 10-line block across 2 files — saves 10 lines
+      FILES: curllm_core/validation/rules.py, curllm_core/validation/structural.py
+  [45] ○ extract_function   → curllm_core/utils/_create_anthropic_client.py
+      WHY: 2 occurrences of 10-line block across 1 files — saves 10 lines
+      FILES: curllm_core/llm_factory.py
+  [46] ○ extract_function   → curllm_core/utils/_handle_extract_emails.py
+      WHY: 2 occurrences of 10-line block across 1 files — saves 10 lines
+      FILES: curllm_core/task_runner_tools.py
+  [47] ○ extract_function   → curllm_core/utils/_prune_nulls.py
+      WHY: 2 occurrences of 9-line block across 2 files — saves 9 lines
+      FILES: curllm_core/llm_planner.py, curllm_core/running/runner.py
+  [48] ○ extract_class      → utils/_parse_simple_instruction.py
+      WHY: 2 occurrences of 8-line block across 2 files — saves 8 lines
+      FILES: bql/parser/bql_parser.py, curllm_core/streamware/components/bql/parser.py
+  [49] ○ extract_class      → curllm_core/utils/_consume.py
+      WHY: 2 occurrences of 8-line block across 2 files — saves 8 lines
+      FILES: curllm_core/bql/bql_parser.py, curllm_core/streamware/components/bql/parser.py
+  [50] ○ extract_function   → curllm_core/orchestrators/utils/__init__.py
+      WHY: 3 occurrences of 4-line block across 3 files — saves 8 lines
+      FILES: curllm_core/orchestrators/ecommerce.py, curllm_core/orchestrators/extraction.py, curllm_core/orchestrators/form.py
+  [51] ○ extract_function   → utils/run_async.py
+      WHY: 2 occurrences of 8-line block across 2 files — saves 8 lines
+      FILES: forms/app.py, pricing/app.py
+  [52] ○ extract_function   → curllm_core/utils/_log_error.py
+      WHY: 3 occurrences of 4-line block across 3 files — saves 8 lines
+      FILES: curllm_core/bql_extraction_orchestrator.py, curllm_core/extraction_orchestrator/extraction_orchestrator.py, curllm_core/streamware/components/bql/orchestrator.py
+  [53] ○ extract_function   → curllm_core/dynamic/utils/find_login_url.py
+      WHY: 3 occurrences of 4-line block across 1 files — saves 8 lines
+      FILES: curllm_core/dynamic/urls.py
+  [54] ○ extract_function   → curllm_core/utils/parse_command.py
+      WHY: 3 occurrences of 4-line block across 3 files — saves 8 lines
+      FILES: curllm_core/parsing/parser.py, curllm_core/planning/planner.py, curllm_core/streamware/yaml_runner.py
+  [55] ○ extract_function   → curllm_core/streamware/components/dom/utils/query_exists.py
+      WHY: 2 occurrences of 8-line block across 1 files — saves 8 lines
+      FILES: curllm_core/streamware/components/dom/query.py
+  [56] ○ extract_function   → curllm_core/streamware/utils/list_available_components.py
+      WHY: 2 occurrences of 8-line block across 2 files — saves 8 lines
+      FILES: curllm_core/streamware/helpers/list_available_components.py, curllm_core/streamware/registry.py
+  [57] ○ extract_function   → utils/_strip_fences.py
+      WHY: 2 occurrences of 7-line block across 2 files — saves 7 lines
+      FILES: captcha/playwright_bql_framework.py, curllm_core/llm_planner.py
+  [58] ○ extract_class      → curllm_core/utils/_execute_query.py
+      WHY: 2 occurrences of 7-line block across 2 files — saves 7 lines
+      FILES: curllm_core/bql/bql_executor.py, curllm_core/streamware/components/bql/executor.py
+  [59] ○ extract_class      → curllm_core/utils/__init__.py
+      WHY: 2 occurrences of 7-line block across 2 files — saves 7 lines
+      FILES: curllm_core/browser_setup.py, curllm_core/streamware/components/browser/setup.py
+  [60] ○ extract_class      → curllm_core/utils/is_session_valid.py
+      WHY: 2 occurrences of 7-line block across 2 files — saves 7 lines
+      FILES: curllm_core/browser_setup.py, curllm_core/streamware/components/browser/setup.py
+  [61] ○ extract_function   → curllm_core/orchestration/utils/execute_command.py
+      WHY: 2 occurrences of 7-line block across 2 files — saves 7 lines
+      FILES: curllm_core/orchestration/execute.py, curllm_core/orchestration/orchestrator/execute_command.py
+  [62] ○ extract_function   → utils/list_models.py
+      WHY: 2 occurrences of 7-line block across 2 files — saves 7 lines
+      FILES: curllm_core/server.py, curllm_server/routes/models.py
+  [63] ○ extract_function   → curllm_core/utils/detect_goal_intelligent.py
+      WHY: 2 occurrences of 7-line block across 2 files — saves 7 lines
+      FILES: curllm_core/goal_detector_llm.py, curllm_core/url_resolution/goal_detector_llm/detect_navigation_goal.py
+  [64] ○ extract_function   → utils/get_filler.py
+      WHY: 2 occurrences of 7-line block across 2 files — saves 7 lines
+      FILES: forms/app.py, pricing/app.py
+  [65] ○ extract_class      → utils/__init__.py
+      WHY: 3 occurrences of 3-line block across 3 files — saves 6 lines
+      FILES: bql/parser/bql_parser.py, curllm_core/bql/bql_parser.py, curllm_core/streamware/components/bql/parser.py
+  [66] ○ extract_class      → utils/__post_init__.py
+      WHY: 3 occurrences of 3-line block across 3 files — saves 6 lines
+      FILES: bql/types/bql_node.py, curllm_core/bql/bql_node.py, curllm_core/streamware/components/bql/parser.py
+  [67] ○ extract_class      → curllm_core/utils/_execute_mutation.py
+      WHY: 2 occurrences of 6-line block across 2 files — saves 6 lines
+      FILES: curllm_core/bql/bql_executor.py, curllm_core/streamware/components/bql/executor.py
+  [68] ○ extract_class      → curllm_core/utils/_execute_selections.py
+      WHY: 2 occurrences of 6-line block across 2 files — saves 6 lines
+      FILES: curllm_core/bql/bql_executor.py, curllm_core/streamware/components/bql/executor.py
+  [69] ○ extract_class      → curllm_core/utils/_parse_action.py
+      WHY: 2 occurrences of 6-line block across 2 files — saves 6 lines
+      FILES: curllm_core/bql/bql_parser.py, curllm_core/streamware/components/bql/parser.py
+  [70] ○ extract_class      → curllm_core/utils/_is_product_task.py
+      WHY: 2 occurrences of 6-line block across 2 files — saves 6 lines
+      FILES: curllm_core/bql_extraction_orchestrator.py, curllm_core/streamware/components/bql/orchestrator.py
+  [71] ○ extract_function   → curllm_core/utils/_log_header.py
+      WHY: 2 occurrences of 6-line block across 2 files — saves 6 lines
+      FILES: curllm_core/bql_extraction_orchestrator.py, curllm_core/extraction_orchestrator/extraction_orchestrator.py
+  [72] ○ extract_class      → curllm_core/utils/load_session_metadata.py
+      WHY: 2 occurrences of 6-line block across 2 files — saves 6 lines
+      FILES: curllm_core/browser_setup.py, curllm_core/streamware/components/browser/setup.py
+  [73] ○ extract_function   → curllm_core/utils/__init__.py
+      WHY: 3 occurrences of 3-line block across 3 files — saves 6 lines
+      FILES: curllm_core/deprecated/hybrid_selector_ranker.py, curllm_core/llm_container_validator.py, curllm_core/llm_filter_validator.py
+  [74] ○ extract_function   → curllm_core/cli/utils/print_fail.py
+      WHY: 2 occurrences of 6-line block across 1 files — saves 6 lines
+      FILES: curllm_core/cli/doctor.py
+  [75] ○ extract_function   → curllm_core/data_export/utils/export_csv.py
+      WHY: 3 occurrences of 3-line block across 3 files — saves 6 lines
+      FILES: curllm_core/data_export/export_csv.py, curllm_core/data_export/export_json.py, curllm_core/data_export/export_markdown.py
+  [76] ○ extract_function   → curllm_core/detection/utils/_log.py
+      WHY: 2 occurrences of 6-line block across 1 files — saves 6 lines
+      FILES: curllm_core/detection/detector.py
+  [77] ● extract_function   → utils/index.py
+      WHY: 3 occurrences of 3-line block across 3 files — saves 6 lines
+      FILES: curllm_web/routes/main.py, forms/app.py, pricing/app.py
+  [78] ○ extract_function   → curllm_core/utils/_log_decision.py
+      WHY: 2 occurrences of 5-line block across 2 files — saves 5 lines
+      FILES: curllm_core/bql_extraction_orchestrator.py, curllm_core/extraction_orchestrator/extraction_orchestrator.py
+  [79] ○ extract_function   → curllm_core/cli/utils/print_header.py
+      WHY: 2 occurrences of 5-line block across 2 files — saves 5 lines
+      FILES: curllm_core/cli/doctor.py, curllm_core/cli/setup.py
+  [80] ○ extract_function   → curllm_core/utils/_log.py
+      WHY: 2 occurrences of 5-line block across 2 files — saves 5 lines
+      FILES: curllm_core/dom_toolkit/orchestrator/task_router.py, curllm_core/dsl/executor.py
+  [81] ○ extract_function   → curllm_core/orchestrators/utils/__init__.py
+      WHY: 2 occurrences of 5-line block across 2 files — saves 5 lines
+      FILES: curllm_core/orchestrators/auth.py, curllm_core/orchestrators/social.py
+  [82] ○ extract_function   → curllm_core/utils/_log_phase.py
+      WHY: 2 occurrences of 4-line block across 2 files — saves 4 lines
+      FILES: curllm_core/bql_extraction_orchestrator.py, curllm_core/extraction_orchestrator/extraction_orchestrator.py
+  [83] ○ extract_class      → utils/solve.py
+      WHY: 2 occurrences of 4-line block across 2 files — saves 4 lines
+      FILES: curllm_core/captcha.py, curllm_server/captcha/solver.py
+  [84] ○ extract_function   → curllm_core/utils/__init__.py
+      WHY: 2 occurrences of 4-line block across 2 files — saves 4 lines
+      FILES: curllm_core/dsl/knowledge_base.py, curllm_core/feedback.py
+  [85] ○ extract_function   → curllm_core/result_validation/utils/validate_form_result.py
+      WHY: 2 occurrences of 4-line block across 1 files — saves 4 lines
+      FILES: curllm_core/result_validation/validator.py
+  [86] ○ extract_function   → curllm_web/routes/utils/get_logs.py
+      WHY: 2 occurrences of 4-line block across 2 files — saves 4 lines
+      FILES: curllm_web/routes/logs.py, curllm_web/routes/prompts.py
+  [87] ○ extract_class      → utils/__init__.py
+      WHY: 2 occurrences of 3-line block across 2 files — saves 3 lines
+      FILES: bql/executor/bql_executor.py, curllm_core/bql/bql_executor.py
+  [88] ○ extract_function   → curllm_core/utils/__init__.py
+      WHY: 2 occurrences of 3-line block across 2 files — saves 3 lines
+      FILES: curllm_core/detection/detector.py, curllm_core/wordpress.py
+  [89] ○ extract_function   → curllm_core/llm_dsl/utils/__init__.py
+      WHY: 2 occurrences of 3-line block across 2 files — saves 3 lines
+      FILES: curllm_core/llm_dsl/atoms.py, curllm_core/llm_dsl/element_finder.py
+  [90] ○ extract_function   → curllm_core/cli/utils/print_success.py
+      WHY: 2 occurrences of 3-line block across 1 files — saves 3 lines
+      FILES: curllm_core/cli/setup.py
+  [91] ○ extract_function   → utils/get_registry.py
+      WHY: 2 occurrences of 3-line block across 2 files — saves 3 lines
+      FILES: curllm_core/tools/registry.py, functions/registry.py
+  [92] ○ extract_function   → utils/health.py
+      WHY: 2 occurrences of 3-line block across 2 files — saves 3 lines
+      FILES: forms/app.py, pricing/app.py
+
+QUICK_WINS[76] (low risk, high savings — do first):
+  [1] extract_function   saved=60L  → curllm_core/utils/_log.py
+      FILES: llmdsl_executor.py, llm_extractor.py, llm_auth_orchestrator.py +4
+  [2] extract_class      saved=56L  → utils/_parse_value.py
+      FILES: bql_parser.py, bql_parser.py, parser.py
+  [3] extract_class      saved=54L  → utils/_execute_action.py
+      FILES: bql_executor.py, bql_executor.py, executor.py
+  [4] extract_function   saved=44L  → curllm_core/streamware/components/utils/_llm_generate.py
+      FILES: container_finder.py, field_detector.py, llm_patterns.py +2
+  [5] extract_function   saved=39L  → curllm_core/orchestrators/utils/_log.py
+      FILES: auth.py, form.py, master.py +1
+  [6] extract_class      saved=38L  → utils/_parse_arguments.py
+      FILES: bql_parser.py, bql_parser.py, parser.py
+  [7] extract_class      saved=36L  → utils/_extract_from_element.py
+      FILES: bql_executor.py, bql_executor.py, executor.py
+  [8] extract_function   saved=34L  → utils/example_with_anthropic.py
+      FILES: examples.py
+  [9] extract_function   saved=33L  → curllm_core/utils/_log.py
+      FILES: ecommerce.py, extraction.py, live.py +1
+  [10] extract_class      saved=32L  → utils/_parse_object.py
+      FILES: bql_parser.py, bql_parser.py, parser.py
+
+DEPENDENCY_RISK[27] (duplicates spanning multiple packages):
+  index  packages=3  files=3
+      curllm_web/routes/main.py
+      forms/app.py
+      pricing/app.py
+  _parse_value  packages=2  files=3
+      bql/parser/bql_parser.py
+      curllm_core/bql/bql_parser.py
+      curllm_core/streamware/components/bql/parser.py
+  _execute_action  packages=2  files=3
+      bql/executor/bql_executor.py
+      curllm_core/bql/bql_executor.py
+      curllm_core/streamware/components/bql/executor.py
+  _parse_arguments  packages=2  files=3
+      bql/parser/bql_parser.py
+      curllm_core/bql/bql_parser.py
+      curllm_core/streamware/components/bql/parser.py
+  _extract_from_element  packages=2  files=3
+      bql/executor/bql_executor.py
+      curllm_core/bql/bql_executor.py
+      curllm_core/streamware/components/bql/executor.py
+  _parse_object  packages=2  files=3
+      bql/parser/bql_parser.py
+      curllm_core/bql/bql_parser.py
+      curllm_core/streamware/components/bql/parser.py
+  _parse_operation  packages=2  files=2
+      bql/parser/bql_parser.py
+      curllm_core/streamware/components/bql/parser.py
+
+EFFORT_ESTIMATE (total ≈ 58.9h):
+  hard   _log                                saved=60L  ~120min
+  hard   _parse_value                        saved=56L  ~224min
+  hard   _execute_action                     saved=54L  ~216min
+  medium _llm_generate                       saved=44L  ~88min
+  medium _log                                saved=39L  ~78min
+  hard   _parse_arguments                    saved=38L  ~152min
+  hard   _extract_from_element               saved=36L  ~144min
+  medium example_with_anthropic              saved=34L  ~68min
+  medium _log                                saved=33L  ~66min
+  hard   _parse_object                       saved=32L  ~128min
+  ... +82 more (~2250min)
+
+METRICS-TARGET:
+  dup_groups:  92 → 0
+  saved_lines: 1311 lines recoverable

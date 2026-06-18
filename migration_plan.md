@@ -7,15 +7,26 @@
 ### Summary
 - **18 files refactored** with LLM-DSL architecture
 - **6 files unchanged** (already LLM-driven or not applicable)
-- **371 tests passing**
-- **URL resolver: 73% average** (7/10 auto-detect, 3/4 contact, 3/4 products)
+- **388 tests passing** (updated 2025-12-08)
+- **URL resolver: 86% average** (24/28 examples passing)
 - **CLI fixed** - `curllm_core.cli_orchestrator` working
 - **Human-like behavior** - `human_delay`, `human_type`, `human_scroll` helpers
 - **Extended security detection** - 20+ CAPTCHA/bot indicators
 
+### Recent Fixes (2025-12-08)
+- **Goal detector refactored** - Removed hardcoded `GOAL_KEYWORDS`, now uses statistical word-overlap scoring with stemming
+- **Goal routing fixed** - FIND_PRODUCTS now uses search flow instead of link-based resolution
+- **SPA hydration support** - Added `wait_for_hydration.py` with `ensure_page_ready()` for CSR/SPA sites
+- **Examples cleaned** - Removed X-kom and Allegro (anti-bot protection incompatible with headless)
+- **Hardcoded patterns removed** - `url_patterns.py` marked DEPRECATED, removed imports from resolver
+- **Search input finding refactored** - Replaced hardcoded selectors with semantic scoring
+- **Keyword fallback enhanced** - Now uses LLM for dynamic keyword generation when available
+- **Exception handling improved** - Only treats "context destroyed" as search success
+
 ### Documentation
 - **[LLM_DSL_ARCHITECTURE.md](docs/LLM_DSL_ARCHITECTURE.md)** - Full architecture documentation
 - **[LLM_DSL_QUICK_REFERENCE.md](docs/LLM_DSL_QUICK_REFERENCE.md)** - Quick reference card
+- **[LLM_DSL_URL_RESOLUTION.md](docs/LLM_DSL_URL_RESOLUTION.md)** - URL resolution architecture (NEW)
 
 ## Overview
 This plan outlines the migration from hardcoded selectors/keywords to LLM-DSL architecture.

@@ -1,0 +1,58 @@
+# curllm | 2552 func | 373f | 111876L | python | 2026-06-06
+# generated in 0.00s
+
+HEALTH:
+  CC̄=4.8  critical=290 (limit:10)  dup=37  cycles=0
+
+ALERTS[20]:
+  !!! cc_exceeded      deterministic_form_fill = 154 (limit:15)
+  !!! cc_exceeded      CurllmExecutor.execute_workflow = 125 (limit:15)
+  !!! cc_exceeded      run_task = 121 (limit:15)
+  !!! cc_exceeded      orchestrate_form_fill = 89 (limit:15)
+  !!! cc_exceeded      evaluate_run_success = 85 (limit:15)
+  !!! cc_exceeded      generate_action = 80 (limit:15)
+  !!! high_fan_out     orchestrate_form_fill = 73 (limit:10)
+  !!! high_fan_out     CurllmExtension.curllmExtension = 72 (limit:10)
+  !!! cc_exceeded      _planner_cycle = 69 (limit:15)
+  !!! high_fan_out     CurllmExecutor.execute_workflow = 64 (limit:10)
+
+MODULES[586] (top by size):
+  M[hardcoded_report.json] 18143L C:0 F:0 CC↑0 D:0 (json)
+  M[scripts/dependency_report.json] 3023L C:0 F:0 CC↑0 D:0 (json)
+  M[curllm_core/url_resolution/resolver.py] 1203L C:1 F:23 CC↑25 D:0 (python)
+  M[static/js/app.js] 1162L C:0 F:123 CC↑23 D:0 (javascript)
+  M[curllm_core/iterative_extractor.py] 1051L C:1 F:11 CC↑36 D:2 (python)
+  M[extension/extension.js] 955L C:2 F:82 CC↑44 D:2 (javascript)
+  M[pricing/app.py] 849L C:3 F:16 CC↑11 D:0 (python)
+  M[curllm_core/orchestration/orchestrator/orchestrator.py] 771L C:1 F:12 CC↑26 D:0 (python)
+  M[captcha/captcha_solver.py] 768L C:6 F:16 CC↑14 D:0 (python)
+  M[curllm_core/execution/executor/curllm_executor.py] 762L C:1 F:21 CC↑125 D:0 (python)
+  M[curllm_core/hierarchical/planner.py] 758L C:0 F:12 CC↑31 D:1 (python)
+  M[curllm_core/streamware/components/form/smart_orchestrator/smart_form_orchestrator.py] 758L C:1 F:21 CC↑13 D:0 (python)
+  M[curllm_core/orchestrators/auth.py] 738L C:3 F:18 CC↑18 D:0 (python)
+  M[curllm_core/validation/task_validator/task_validator/task_validator.py] 733L C:1 F:18 CC↑30 D:0 (python)
+  M[curllm_core/transparent/orchestrator.py] 725L C:1 F:22 CC↑8 D:0 (python)
+  LANGS: python:517/shell:28/yaml:13/other:8/javascript:5/json:5/yml:4/txt:3/toml:2/php:1
+
+HOTSPOTS[10]:
+  ★ orchestrate_form_fill fan=73  // Orchestrate form filling using atomic components.
+
+Flow:
+1. Parse instruction to
+  ★ CurllmExtension.curllmExtension fan=72  // Orchestrates 72 calls
+  ★ CurllmExecutor.execute_workflow fan=64  // Orchestrates 64 calls
+  ★ run_task fan=58  // Orchestrates 58 calls
+  ★ deterministic_form_fill fan=57  // Fill form using LLM-driven field detection.
+
+Architecture:
+1. LLM generates fiel
+
+REFACTOR[15]:
+  [1] H/L Split CurllmExtension.curllmExtension (CC=44)
+  [2] H/L Split setup_playwright (CC=28)
+  [3] H/L Split create_vision_decision_tree (CC=33)
+  [4] H/L Split build_progressive_context (CC=29)
+  [5] H/L Split _load_public_list (CC=45)
+
+EVOLUTION:
+  2026-06-06 CC̄=4.8 crit=290 111876L // Automated analysis

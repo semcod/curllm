@@ -1,0 +1,472 @@
+flowchart LR
+%% generated in 0.06s
+    subgraph captcha__playwright_bql_framework
+        captcha__playwright_bql_framework__BQLExecutor__run["run"]
+        captcha__playwright_bql_framework__extract_iframe_info["extract_iframe_info"]
+        captcha__playwright_bql_framework__call_llm_ollama["call_llm_ollama"]
+        captcha__playwright_bql_framework__extract_interactive_elements["extract_interactive_elements"]
+        captcha__playwright_bql_framework__BQLAgent__run_instruction["run_instruction"]
+        captcha__playwright_bql_framework__extract_semantic_dom["extract_semantic_dom"]
+        captcha__playwright_bql_framework___parse_actions_from_llm["_parse_actions_from_llm"]
+        captcha__playwright_bql_framework__detect_consent_or_captcha["detect_consent_or_captcha"]
+    end
+    subgraph curllm_core__deprecated
+        curllm_core__deprecated__atomic_query__quick_extract_products["quick_extract_products"]
+    end
+    subgraph curllm_core__detection
+        curllm_core__detection__detector__dynamic_extract["dynamic_extract"]
+    end
+    subgraph curllm_core__streamware
+        curllm_core__streamware__patterns__join__join["join"]
+        curllm_core__streamware__patterns__multicast__multicast["multicast"]
+        curllm_core__streamware__registry__list_available_components["list_available_components"]
+        curllm_core__streamware__patterns__choose__choose["choose"]
+        curllm_core__streamware__flow__flow["flow"]
+        curllm_core__streamware__helpers__enable_diagnostics__enable_diagnostics["enable_diagnostics"]
+        curllm_core__streamware__components__curllm__browse["browse"]
+        curllm_core__streamware__patterns__split__split["split"]
+        curllm_core__streamware__components__curllm__extract_data["extract_data"]
+        curllm_core__streamware__helpers__pipeline__pipeline["pipeline"]
+        curllm_core__streamware__yaml_runner__run_yaml_flow["run_yaml_flow"]
+    end
+    subgraph curllm_server__executor
+        curllm_server__executor__curllm_executor__CurllmExecutor___strip_fences["_strip_fences"]
+    end
+    subgraph examples
+        examples__example_social_media_scraping["example_social_media_scraping"]
+        examples__example_with_deepseek["example_with_deepseek"]
+        examples__example_table_extraction["example_table_extraction"]
+        examples__example_price_monitoring["example_price_monitoring"]
+        examples__main["main"]
+        examples__example_simple_extraction["example_simple_extraction"]
+        examples__example_with_groq["example_with_groq"]
+        examples__example_captcha_solving["example_captcha_solving"]
+        examples__example_multi_step_workflow["example_multi_step_workflow"]
+        examples__example_with_presets["example_with_presets"]
+        examples__example_bql_query["example_bql_query"]
+        examples__example_login_2fa["example_login_2fa"]
+        examples__example_form_automation["example_form_automation"]
+        examples__benchmark_providers["benchmark_providers"]
+        examples__example_env_based_config["example_env_based_config"]
+        examples__example_pdf_download["example_pdf_download"]
+        examples__example_with_anthropic["example_with_anthropic"]
+        examples__example_with_openai["example_with_openai"]
+        examples__example_with_gemini["example_with_gemini"]
+    end
+    subgraph examples__api_clients
+        examples__api_clients__node_api_example__postJsonFetch["postJsonFetch"]
+        examples__api_clients__node_api_example__endpoint["endpoint"]
+        examples__api_clients__node_api_example__postJsonHttp["postJsonHttp"]
+        examples__api_clients__node_api_example__text["text"]
+        examples__api_clients__node_api_example__asBool["asBool"]
+        examples__api_clients__node_api_example__API_HOST["API_HOST"]
+    end
+    subgraph examples__bql
+        examples__bql__contact_form__main["main"]
+    end
+    subgraph examples__detection
+        examples__detection__llm_heuristics_example__main["main"]
+        examples__detection__dynamic_detection_example__example_ceneo["example_ceneo"]
+        examples__detection__atomic_query_example__example_multi_format_export["example_multi_format_export"]
+        examples__detection__atomic_query_example__example_product_query["example_product_query"]
+        examples__detection__dynamic_detection_example__example_fake_site["example_fake_site"]
+        examples__detection__atomic_query_example__main["main"]
+        examples__detection__atomic_query_example__example_quick_functions["example_quick_functions"]
+        examples__detection__atomic_query_example__example_complete_workflow["example_complete_workflow"]
+        examples__detection__dynamic_detection_example__example_comparison["example_comparison"]
+        examples__detection__dynamic_detection_example__main["main"]
+        examples__detection__atomic_query_example__example_basic_query["example_basic_query"]
+        examples__detection__dynamic_detection_example__example_skapiec["example_skapiec"]
+    end
+    subgraph examples__extraction
+        examples__extraction__products__extract_products__extract_products_basic["extract_products_basic"]
+        examples__extraction__products__extract_products__main["main"]
+    end
+    subgraph examples__llm_providers
+        examples__llm_providers__multi_provider_benchmark__benchmark_provider["benchmark_provider"]
+        examples__llm_providers__multi_provider_benchmark__main["main"]
+        examples__llm_providers__multi_provider_benchmark__run_benchmark["run_benchmark"]
+        examples__llm_providers__openai_example__main["main"]
+        examples__llm_providers__openai_example__extract_with_openai["extract_with_openai"]
+    end
+    subgraph examples__orchestration
+        examples__orchestration__semantic_query_example__example_semantic_vs_monolithic["example_semantic_vs_monolithic"]
+        examples__orchestration__orchestrator_example__example_master_orchestrator["example_master_orchestrator"]
+        examples__orchestration__semantic_query_example__example_iterative_extraction["example_iterative_extraction"]
+        examples__orchestration__semantic_query_example__example_custom_extraction["example_custom_extraction"]
+    end
+    subgraph examples__streamware
+        examples__streamware__streamware_examples__example_7_multicast["example_7_multicast"]
+        examples__streamware__streamware_examples__example_2_data_extraction["example_2_data_extraction"]
+        examples__streamware__streamware_quickstart__main["main"]
+        examples__streamware__streamware_examples__example_5_pipeline_composition["example_5_pipeline_composition"]
+        examples__streamware__streamware_examples__example_15_http_requests["example_15_http_requests"]
+        examples__streamware__streamware_examples__example_11_helper_functions["example_11_helper_functions"]
+        examples__streamware__streamware_examples__example_14_file_operations["example_14_file_operations"]
+        examples__streamware__streamware_examples__example_1_simple_browse["example_1_simple_browse"]
+        examples__streamware__streamware_examples__example_8_conditional_routing["example_8_conditional_routing"]
+        examples__streamware__streamware_examples__example_10_with_metrics["example_10_with_metrics"]
+        examples__streamware__streamware_examples__example_12_web_scraping_pipeline["example_12_web_scraping_pipeli"]
+        examples__streamware__streamware_examples__example_13_error_handling["example_13_error_handling"]
+        examples__streamware__streamware_examples__example_3_form_filling["example_3_form_filling"]
+        examples__streamware__streamware_examples__example_9_streaming["example_9_streaming"]
+        examples__streamware__streamware_examples__example_6_split_join["example_6_split_join"]
+        examples__streamware__streamware_examples__example_4_bql_query["example_4_bql_query"]
+    end
+    subgraph examples__url_resolver
+        examples__url_resolver__example_auto_detect__main["main"]
+        examples__url_resolver__example_complete_flow__execute_command["execute_command"]
+        examples__url_resolver__example_complete_flow__parse_command["parse_command"]
+        examples__url_resolver__example_find_products__get_llm["get_llm"]
+        examples__url_resolver__example_find_info__main["main"]
+        examples__url_resolver__example_find_info__run_example["run_example"]
+        examples__url_resolver__run_all__run_example["run_example"]
+        examples__url_resolver__example_find_products__run_example["run_example"]
+        examples__url_resolver__example_find_products__main["main"]
+        examples__url_resolver__example_complete_flow__main["main"]
+        examples__url_resolver__example_find_contact__run_example["run_example"]
+        examples__url_resolver__example_find_contact__main["main"]
+        examples__url_resolver__example_find_contact__get_llm["get_llm"]
+        examples__url_resolver__example_shopping_flow__run_example["run_example"]
+        examples__url_resolver__example_auto_detect__get_llm["get_llm"]
+        examples__url_resolver__example_shopping_flow__main["main"]
+        examples__url_resolver__example_auto_detect__run_example["run_example"]
+        examples__url_resolver__run_all__main["main"]
+        examples__url_resolver__example_find_info__get_llm["get_llm"]
+    end
+    subgraph examples_streamware
+        examples_streamware__example_5_multi_format_export["example_5_multi_format_export"]
+        examples_streamware__example_11_screenshot_capture["example_11_screenshot_capture"]
+        examples_streamware__example_1_simple_browse["example_1_simple_browse"]
+        examples_streamware__example_2_data_extraction["example_2_data_extraction"]
+        examples_streamware__example_15_metrics_tracking["example_15_metrics_tracking"]
+        examples_streamware__example_3_form_filling["example_3_form_filling"]
+        examples_streamware__example_12_data_validation["example_12_data_validation"]
+        examples_streamware__example_8_scraping_pipeline["example_8_scraping_pipeline"]
+        examples_streamware__example_9_yaml_flow["example_9_yaml_flow"]
+        examples_streamware__example_4_bql_query["example_4_bql_query"]
+        examples_streamware__example_10_http_to_scraping["example_10_http_to_scraping"]
+        examples_streamware__example_14_transform_pipeline["example_14_transform_pipeline"]
+        examples_streamware__example_13_file_operations["example_13_file_operations"]
+        examples_streamware__example_6_batch_processing["example_6_batch_processing"]
+        examples_streamware__example_7_conditional_routing["example_7_conditional_routing"]
+    end
+    subgraph extension__extension
+        extension__extension__CurllmContentScript__removeRecordingListeners["removeRecordingListeners"]
+        extension__extension__CurllmContentScript__getForms["getForms"]
+        extension__extension__CurllmContentScript__injectHelpers["injectHelpers"]
+        extension__extension__CurllmContentScript__attachRecordingListeners["attachRecordingListeners"]
+        extension__extension__CurllmContentScript__getSelector["getSelector"]
+        extension__extension__CurllmContentScript__element["element"]
+        extension__extension__CurllmContentScript__click["click"]
+        extension__extension__CurllmContentScript__observer["observer"]
+        extension__extension__CurllmExtension__stopRecording["stopRecording"]
+        extension__extension__CurllmExtension__recordAction["recordAction"]
+        extension__extension__CurllmExtension__setupListeners["setupListeners"]
+        extension__extension__CurllmExtension__setupSidePanel["setupSidePanel"]
+        extension__extension__CurllmContentScript__disableElementPicker["disableElementPicker"]
+        extension__extension__CurllmExtension__captureTabSession["captureTabSession"]
+        extension__extension__CurllmExtension__handleMessage["handleMessage"]
+        extension__extension__CurllmContentScript__enableElementPicker["enableElementPicker"]
+        extension__extension__CurllmContentScript__select["select"]
+        extension__extension__CurllmContentScript__hideRecordingOverlay["hideRecordingOverlay"]
+        extension__extension__CurllmContentScript__getLocalStorage["getLocalStorage"]
+        extension__extension__CurllmContentScript__getLinks["getLinks"]
+        extension__extension__CurllmContentScript__stopRecording["stopRecording"]
+        extension__extension__CurllmExtension__executeActionsInTab["executeActionsInTab"]
+        extension__extension__CurllmContentScript__extract["extract"]
+        extension__extension__CurllmExtension__data["data"]
+        extension__extension__CurllmContentScript__getImages["getImages"]
+        extension__extension__CurllmExtension__workflow["workflow"]
+        extension__extension__CurllmContentScript__resolve["resolve"]
+        extension__extension__CurllmExtension__startRecording["startRecording"]
+        extension__extension__CurllmExtension__showNotification["showNotification"]
+        extension__extension__CurllmExtension__extracted["extracted"]
+        extension__extension__CurllmContentScript__sendResponse["sendResponse"]
+        extension__extension__CurllmExtension__setupContextMenu["setupContextMenu"]
+        extension__extension__CurllmExtension__init["init"]
+        extension__extension__CurllmContentScript__executeAction["executeAction"]
+        extension__extension__CurllmContentScript__key["key"]
+        extension__extension__CurllmExtension__curllmExtension["curllmExtension"]
+        extension__extension__CurllmContentScript__reject["reject"]
+        extension__extension__CurllmExtension__checkServerStatus["checkServerStatus"]
+        extension__extension__CurllmExtension__sendResponse["sendResponse"]
+        extension__extension__CurllmContentScript__startRecording["startRecording"]
+        extension__extension__CurllmContentScript__handleMessage["handleMessage"]
+        extension__extension__CurllmExtension__handleContextMenu["handleContextMenu"]
+        extension__extension__CurllmContentScript__name["name"]
+        extension__extension__CurllmContentScript__highlightElement["highlightElement"]
+        extension__extension__CurllmExtension__analysis["analysis"]
+        extension__extension__CurllmExtension__executeAutomation["executeAutomation"]
+        extension__extension__CurllmContentScript__script["script"]
+        extension__extension__CurllmExtension__analyzeWithAI["analyzeWithAI"]
+        extension__extension__CurllmExtension__optimizeActions["optimizeActions"]
+        extension__extension__CurllmContentScript__getMetadata["getMetadata"]
+        extension__extension__CurllmContentScript__getSessionStorage["getSessionStorage"]
+        extension__extension__CurllmContentScript__showRecordingOverlay["showRecordingOverlay"]
+        extension__extension__CurllmContentScript__scroll["scroll"]
+        extension__extension__CurllmExtension__setIcon["setIcon"]
+        extension__extension__CurllmContentScript__getTables["getTables"]
+        extension__extension__CurllmContentScript__getPageContext["getPageContext"]
+        extension__extension__CurllmContentScript__init["init"]
+        extension__extension__CurllmExtension__generateWorkflow["generateWorkflow"]
+        extension__extension__CurllmContentScript__input["input"]
+        extension__extension__CurllmContentScript__setTimeout["setTimeout"]
+    end
+    subgraph functions__js
+        functions__js__safety__str["str"]
+    end
+    subgraph functions__registry
+        functions__registry__FunctionRegistry__list["list"]
+    end
+    subgraph monitoring__send_email
+        monitoring__send_email__main["main"]
+        monitoring__send_email__send_email["send_email"]
+    end
+    subgraph monitoring__website_monitor
+        monitoring__website_monitor__print["print"]
+    end
+    subgraph wordpress_batch
+        wordpress_batch__batch_create_posts["batch_create_posts"]
+    end
+    examples__api_clients__node_api_example__API_HOST --> examples__api_clients__node_api_example__asBool
+    examples__api_clients__node_api_example__postJsonFetch --> examples__api_clients__node_api_example__text
+    examples__api_clients__node_api_example__endpoint --> examples__api_clients__node_api_example__postJsonFetch
+    examples__api_clients__node_api_example__endpoint --> examples__api_clients__node_api_example__postJsonHttp
+    examples__example_simple_extraction --> monitoring__website_monitor__print
+    examples__example_form_automation --> monitoring__website_monitor__print
+    examples__example_login_2fa --> monitoring__website_monitor__print
+    examples__example_bql_query --> monitoring__website_monitor__print
+    examples__example_captcha_solving --> monitoring__website_monitor__print
+    examples__example_pdf_download --> monitoring__website_monitor__print
+    examples__example_price_monitoring --> monitoring__website_monitor__print
+    examples__example_social_media_scraping --> monitoring__website_monitor__print
+    examples__example_table_extraction --> monitoring__website_monitor__print
+    examples__example_multi_step_workflow --> monitoring__website_monitor__print
+    examples__example_with_openai --> monitoring__website_monitor__print
+    examples__example_with_anthropic --> monitoring__website_monitor__print
+    examples__example_with_gemini --> monitoring__website_monitor__print
+    examples__example_with_groq --> monitoring__website_monitor__print
+    examples__example_with_deepseek --> monitoring__website_monitor__print
+    examples__example_with_presets --> monitoring__website_monitor__print
+    examples__example_env_based_config --> monitoring__website_monitor__print
+    examples__benchmark_providers --> monitoring__website_monitor__print
+    examples__main --> monitoring__website_monitor__print
+    examples_streamware__example_1_simple_browse --> monitoring__website_monitor__print
+    examples_streamware__example_1_simple_browse --> curllm_core__streamware__flow__flow
+    examples_streamware__example_2_data_extraction --> monitoring__website_monitor__print
+    examples_streamware__example_2_data_extraction --> curllm_core__streamware__flow__flow
+    examples_streamware__example_3_form_filling --> monitoring__website_monitor__print
+    examples_streamware__example_3_form_filling --> curllm_core__streamware__flow__flow
+    examples_streamware__example_4_bql_query --> monitoring__website_monitor__print
+    examples_streamware__example_4_bql_query --> curllm_core__streamware__flow__flow
+    examples_streamware__example_5_multi_format_export --> monitoring__website_monitor__print
+    examples_streamware__example_5_multi_format_export --> curllm_core__streamware__flow__flow
+    examples_streamware__example_5_multi_format_export --> curllm_core__streamware__patterns__multicast__multicast
+    examples_streamware__example_6_batch_processing --> monitoring__website_monitor__print
+    examples_streamware__example_6_batch_processing --> curllm_core__streamware__patterns__join__join
+    examples_streamware__example_6_batch_processing --> curllm_core__streamware__patterns__split__split
+    examples_streamware__example_6_batch_processing --> curllm_core__streamware__flow__flow
+    examples_streamware__example_7_conditional_routing --> monitoring__website_monitor__print
+    examples_streamware__example_7_conditional_routing --> curllm_core__streamware__flow__flow
+    examples_streamware__example_7_conditional_routing --> curllm_core__streamware__patterns__choose__choose
+    examples_streamware__example_8_scraping_pipeline --> monitoring__website_monitor__print
+    examples_streamware__example_8_scraping_pipeline --> curllm_core__streamware__helpers__pipeline__pipeline
+    examples_streamware__example_9_yaml_flow --> monitoring__website_monitor__print
+    examples_streamware__example_9_yaml_flow --> curllm_core__streamware__yaml_runner__run_yaml_flow
+    examples_streamware__example_10_http_to_scraping --> monitoring__website_monitor__print
+    examples_streamware__example_10_http_to_scraping --> curllm_core__streamware__flow__flow
+    examples_streamware__example_11_screenshot_capture --> monitoring__website_monitor__print
+    examples_streamware__example_11_screenshot_capture --> curllm_core__streamware__flow__flow
+    examples_streamware__example_12_data_validation --> monitoring__website_monitor__print
+    examples_streamware__example_12_data_validation --> curllm_core__streamware__flow__flow
+    examples_streamware__example_13_file_operations --> monitoring__website_monitor__print
+    examples_streamware__example_13_file_operations --> curllm_core__streamware__flow__flow
+    examples_streamware__example_14_transform_pipeline --> monitoring__website_monitor__print
+    examples_streamware__example_14_transform_pipeline --> curllm_core__streamware__flow__flow
+    examples_streamware__example_15_metrics_tracking --> monitoring__website_monitor__print
+    examples_streamware__example_15_metrics_tracking --> curllm_core__streamware__flow__flow
+    examples__detection__dynamic_detection_example__example_skapiec --> monitoring__website_monitor__print
+    examples__detection__dynamic_detection_example__example_ceneo --> monitoring__website_monitor__print
+    examples__detection__dynamic_detection_example__example_ceneo --> curllm_core__detection__detector__dynamic_extract
+    examples__detection__dynamic_detection_example__example_fake_site --> monitoring__website_monitor__print
+    examples__detection__dynamic_detection_example__example_comparison --> monitoring__website_monitor__print
+    examples__detection__dynamic_detection_example__main --> monitoring__website_monitor__print
+    examples__detection__atomic_query_example__example_basic_query --> monitoring__website_monitor__print
+    examples__detection__atomic_query_example__example_product_query --> monitoring__website_monitor__print
+    examples__detection__atomic_query_example__example_quick_functions --> monitoring__website_monitor__print
+    examples__detection__atomic_query_example__example_quick_functions --> curllm_core__deprecated__atomic_query__quick_extract_products
+    examples__detection__atomic_query_example__example_multi_format_export --> monitoring__website_monitor__print
+    examples__detection__atomic_query_example__example_complete_workflow --> monitoring__website_monitor__print
+    examples__detection__atomic_query_example__main --> monitoring__website_monitor__print
+    examples__detection__atomic_query_example__main --> examples__detection__atomic_query_example__example_multi_format_export
+    examples__detection__atomic_query_example__main --> examples__detection__atomic_query_example__example_basic_query
+    examples__detection__atomic_query_example__main --> examples__detection__atomic_query_example__example_product_query
+    examples__detection__atomic_query_example__main --> examples__detection__atomic_query_example__example_quick_functions
+    captcha__playwright_bql_framework__extract_semantic_dom --> functions__registry__FunctionRegistry__list
+    captcha__playwright_bql_framework__extract_semantic_dom --> functions__js__safety__str
+    captcha__playwright_bql_framework__detect_consent_or_captcha --> captcha__playwright_bql_framework__extract_iframe_info
+    captcha__playwright_bql_framework__detect_consent_or_captcha --> functions__js__safety__str
+    captcha__playwright_bql_framework__BQLExecutor__run --> functions__js__safety__str
+    captcha__playwright_bql_framework__BQLAgent__run_instruction --> captcha__playwright_bql_framework__detect_consent_or_captcha
+    captcha__playwright_bql_framework__BQLAgent__run_instruction --> captcha__playwright_bql_framework__extract_semantic_dom
+    captcha__playwright_bql_framework__BQLAgent__run_instruction --> captcha__playwright_bql_framework__extract_interactive_elements
+    captcha__playwright_bql_framework__BQLAgent__run_instruction --> captcha__playwright_bql_framework__extract_iframe_info
+    captcha__playwright_bql_framework__call_llm_ollama --> functions__js__safety__str
+    captcha__playwright_bql_framework___parse_actions_from_llm --> curllm_server__executor__curllm_executor__CurllmExecutor___strip_fences
+    examples__url_resolver__example_find_products__run_example --> monitoring__website_monitor__print
+    examples__url_resolver__example_find_products__run_example --> examples__url_resolver__example_find_products__get_llm
+    examples__url_resolver__example_find_products__main --> monitoring__website_monitor__print
+    examples__url_resolver__example_find_products__main --> examples__url_resolver__example_find_products__run_example
+    examples__url_resolver__example_shopping_flow__run_example --> monitoring__website_monitor__print
+    examples__url_resolver__example_shopping_flow__main --> monitoring__website_monitor__print
+    examples__url_resolver__example_shopping_flow__main --> examples__url_resolver__example_shopping_flow__run_example
+    examples__url_resolver__example_auto_detect__run_example --> monitoring__website_monitor__print
+    examples__url_resolver__example_auto_detect__run_example --> examples__url_resolver__example_auto_detect__get_llm
+    examples__url_resolver__example_auto_detect__main --> monitoring__website_monitor__print
+    examples__url_resolver__example_auto_detect__main --> examples__url_resolver__example_auto_detect__run_example
+    examples__streamware__streamware_quickstart__main --> monitoring__website_monitor__print
+    examples__streamware__streamware_quickstart__main --> curllm_core__streamware__helpers__enable_diagnostics__enable_diagnostics
+    examples__streamware__streamware_quickstart__main --> curllm_core__streamware__registry__list_available_components
+    examples__url_resolver__example_find_info__run_example --> monitoring__website_monitor__print
+    examples__url_resolver__example_find_info__run_example --> examples__url_resolver__example_find_info__get_llm
+    examples__url_resolver__example_find_info__main --> monitoring__website_monitor__print
+    examples__url_resolver__example_find_info__main --> examples__url_resolver__example_find_info__run_example
+    examples__url_resolver__example_find_contact__run_example --> monitoring__website_monitor__print
+    examples__url_resolver__example_find_contact__run_example --> examples__url_resolver__example_find_contact__get_llm
+    examples__url_resolver__example_find_contact__main --> monitoring__website_monitor__print
+    examples__url_resolver__example_find_contact__main --> examples__url_resolver__example_find_contact__run_example
+    examples__url_resolver__run_all__run_example --> monitoring__website_monitor__print
+    examples__url_resolver__run_all__main --> monitoring__website_monitor__print
+    examples__orchestration__semantic_query_example__example_semantic_vs_monolithic --> monitoring__website_monitor__print
+    examples__orchestration__semantic_query_example__example_custom_extraction --> monitoring__website_monitor__print
+    examples__orchestration__semantic_query_example__example_iterative_extraction --> monitoring__website_monitor__print
+    examples__url_resolver__example_complete_flow__execute_command --> monitoring__website_monitor__print
+    examples__url_resolver__example_complete_flow__execute_command --> examples__url_resolver__example_complete_flow__parse_command
+    examples__url_resolver__example_complete_flow__main --> monitoring__website_monitor__print
+    wordpress_batch__batch_create_posts --> functions__registry__FunctionRegistry__list
+    wordpress_batch__batch_create_posts --> monitoring__website_monitor__print
+    examples__extraction__products__extract_products__main --> monitoring__website_monitor__print
+    examples__extraction__products__extract_products__main --> examples__extraction__products__extract_products__extract_products_basic
+    examples__streamware__streamware_examples__example_1_simple_browse --> monitoring__website_monitor__print
+    examples__streamware__streamware_examples__example_1_simple_browse --> curllm_core__streamware__flow__flow
+    examples__streamware__streamware_examples__example_2_data_extraction --> monitoring__website_monitor__print
+    examples__streamware__streamware_examples__example_2_data_extraction --> curllm_core__streamware__flow__flow
+    examples__streamware__streamware_examples__example_3_form_filling --> monitoring__website_monitor__print
+    examples__streamware__streamware_examples__example_3_form_filling --> curllm_core__streamware__flow__flow
+    examples__streamware__streamware_examples__example_4_bql_query --> monitoring__website_monitor__print
+    examples__streamware__streamware_examples__example_4_bql_query --> curllm_core__streamware__flow__flow
+    examples__streamware__streamware_examples__example_5_pipeline_composition --> monitoring__website_monitor__print
+    examples__streamware__streamware_examples__example_5_pipeline_composition --> curllm_core__streamware__helpers__pipeline__pipeline
+    examples__streamware__streamware_examples__example_6_split_join --> monitoring__website_monitor__print
+    examples__streamware__streamware_examples__example_6_split_join --> curllm_core__streamware__patterns__join__join
+    examples__streamware__streamware_examples__example_6_split_join --> curllm_core__streamware__patterns__split__split
+    examples__streamware__streamware_examples__example_6_split_join --> curllm_core__streamware__flow__flow
+    examples__streamware__streamware_examples__example_7_multicast --> monitoring__website_monitor__print
+    examples__streamware__streamware_examples__example_7_multicast --> curllm_core__streamware__flow__flow
+    examples__streamware__streamware_examples__example_7_multicast --> curllm_core__streamware__patterns__multicast__multicast
+    examples__streamware__streamware_examples__example_8_conditional_routing --> monitoring__website_monitor__print
+    examples__streamware__streamware_examples__example_8_conditional_routing --> curllm_core__streamware__flow__flow
+    examples__streamware__streamware_examples__example_8_conditional_routing --> curllm_core__streamware__patterns__choose__choose
+    examples__streamware__streamware_examples__example_9_streaming --> monitoring__website_monitor__print
+    examples__streamware__streamware_examples__example_9_streaming --> curllm_core__streamware__flow__flow
+    examples__streamware__streamware_examples__example_10_with_metrics --> monitoring__website_monitor__print
+    examples__streamware__streamware_examples__example_10_with_metrics --> curllm_core__streamware__flow__flow
+    examples__streamware__streamware_examples__example_11_helper_functions --> monitoring__website_monitor__print
+    examples__streamware__streamware_examples__example_11_helper_functions --> curllm_core__streamware__components__curllm__browse
+    examples__streamware__streamware_examples__example_11_helper_functions --> curllm_core__streamware__components__curllm__extract_data
+    examples__streamware__streamware_examples__example_12_web_scraping_pipeline --> monitoring__website_monitor__print
+    examples__streamware__streamware_examples__example_12_web_scraping_pipeline --> curllm_core__streamware__flow__flow
+    examples__streamware__streamware_examples__example_13_error_handling --> monitoring__website_monitor__print
+    examples__streamware__streamware_examples__example_13_error_handling --> curllm_core__streamware__flow__flow
+    examples__streamware__streamware_examples__example_14_file_operations --> monitoring__website_monitor__print
+    examples__streamware__streamware_examples__example_14_file_operations --> curllm_core__streamware__flow__flow
+    examples__streamware__streamware_examples__example_15_http_requests --> monitoring__website_monitor__print
+    examples__streamware__streamware_examples__example_15_http_requests --> curllm_core__streamware__flow__flow
+    examples__llm_providers__multi_provider_benchmark__benchmark_provider --> monitoring__website_monitor__print
+    examples__llm_providers__multi_provider_benchmark__benchmark_provider --> functions__js__safety__str
+    examples__llm_providers__multi_provider_benchmark__run_benchmark --> monitoring__website_monitor__print
+    examples__llm_providers__multi_provider_benchmark__main --> monitoring__website_monitor__print
+    examples__llm_providers__multi_provider_benchmark__main --> examples__llm_providers__multi_provider_benchmark__run_benchmark
+    examples__detection__llm_heuristics_example__main --> monitoring__website_monitor__print
+    monitoring__send_email__main --> monitoring__send_email__send_email
+    examples__llm_providers__openai_example__extract_with_openai --> monitoring__website_monitor__print
+    examples__llm_providers__openai_example__main --> monitoring__website_monitor__print
+    examples__llm_providers__openai_example__main --> examples__llm_providers__openai_example__extract_with_openai
+    examples__bql__contact_form__main --> monitoring__website_monitor__print
+    extension__extension__CurllmExtension__init --> extension__extension__CurllmExtension__checkServerStatus
+    extension__extension__CurllmExtension__init --> extension__extension__CurllmExtension__setupListeners
+    extension__extension__CurllmExtension__init --> extension__extension__CurllmExtension__setupContextMenu
+    extension__extension__CurllmExtension__init --> extension__extension__CurllmExtension__setupSidePanel
+    extension__extension__CurllmExtension__checkServerStatus --> extension__extension__CurllmExtension__setIcon
+    extension__extension__CurllmExtension__checkServerStatus --> extension__extension__CurllmExtension__showNotification
+    extension__extension__CurllmExtension__data --> extension__extension__CurllmExtension__setIcon
+    extension__extension__CurllmExtension__data --> extension__extension__CurllmExtension__showNotification
+    extension__extension__CurllmExtension__setupListeners --> extension__extension__CurllmExtension__handleMessage
+    extension__extension__CurllmExtension__setupListeners --> extension__extension__CurllmExtension__captureTabSession
+    extension__extension__CurllmExtension__setupListeners --> extension__extension__CurllmExtension__handleContextMenu
+    extension__extension__CurllmExtension__handleMessage --> extension__extension__CurllmExtension__executeAutomation
+    extension__extension__CurllmExtension__handleMessage --> extension__extension__CurllmExtension__sendResponse
+    extension__extension__CurllmExtension__handleMessage --> extension__extension__CurllmExtension__startRecording
+    extension__extension__CurllmExtension__handleMessage --> extension__extension__CurllmExtension__stopRecording
+    extension__extension__CurllmExtension__handleMessage --> extension__extension__CurllmExtension__recordAction
+    extension__extension__CurllmExtension__handleMessage --> extension__extension__CurllmExtension__analyzeWithAI
+    extension__extension__CurllmExtension__workflow --> extension__extension__CurllmExtension__sendResponse
+    extension__extension__CurllmExtension__analysis --> extension__extension__CurllmExtension__sendResponse
+    extension__extension__CurllmExtension__extracted --> extension__extension__CurllmExtension__sendResponse
+    extension__extension__CurllmExtension__executeAutomation --> extension__extension__CurllmExtension__captureTabSession
+    extension__extension__CurllmExtension__executeAutomation --> extension__extension__CurllmExtension__executeActionsInTab
+    extension__extension__CurllmExtension__executeActionsInTab --> extension__extension__CurllmContentScript__setTimeout
+    extension__extension__CurllmExtension__startRecording --> extension__extension__CurllmExtension__setIcon
+    extension__extension__CurllmExtension__stopRecording --> extension__extension__CurllmExtension__setIcon
+    extension__extension__CurllmExtension__stopRecording --> extension__extension__CurllmExtension__generateWorkflow
+    extension__extension__CurllmExtension__generateWorkflow --> extension__extension__CurllmExtension__optimizeActions
+    extension__extension__CurllmExtension__curllmExtension --> extension__extension__CurllmExtension__init
+    extension__extension__CurllmExtension__curllmExtension --> extension__extension__CurllmExtension__handleMessage
+    extension__extension__CurllmExtension__curllmExtension --> extension__extension__CurllmContentScript__injectHelpers
+    extension__extension__CurllmExtension__curllmExtension --> extension__extension__CurllmExtension__sendResponse
+    extension__extension__CurllmExtension__curllmExtension --> extension__extension__CurllmContentScript__getLocalStorage
+    extension__extension__CurllmExtension__curllmExtension --> extension__extension__CurllmContentScript__getSessionStorage
+    extension__extension__CurllmExtension__curllmExtension --> extension__extension__CurllmContentScript__executeAction
+    extension__extension__CurllmExtension__curllmExtension --> extension__extension__CurllmExtension__startRecording
+    extension__extension__CurllmContentScript__init --> extension__extension__CurllmContentScript__handleMessage
+    extension__extension__CurllmContentScript__init --> extension__extension__CurllmContentScript__injectHelpers
+    extension__extension__CurllmContentScript__handleMessage --> extension__extension__CurllmContentScript__sendResponse
+    extension__extension__CurllmContentScript__handleMessage --> extension__extension__CurllmContentScript__getLocalStorage
+    extension__extension__CurllmContentScript__handleMessage --> extension__extension__CurllmContentScript__getSessionStorage
+    extension__extension__CurllmContentScript__handleMessage --> extension__extension__CurllmContentScript__executeAction
+    extension__extension__CurllmContentScript__handleMessage --> extension__extension__CurllmContentScript__startRecording
+    extension__extension__CurllmContentScript__handleMessage --> extension__extension__CurllmContentScript__stopRecording
+    extension__extension__CurllmContentScript__handleMessage --> extension__extension__CurllmContentScript__enableElementPicker
+    extension__extension__CurllmContentScript__handleMessage --> extension__extension__CurllmContentScript__getPageContext
+    extension__extension__CurllmContentScript__getLocalStorage --> extension__extension__CurllmContentScript__key
+    extension__extension__CurllmContentScript__key --> extension__extension__CurllmContentScript__getPageContext
+    extension__extension__CurllmContentScript__getSessionStorage --> extension__extension__CurllmContentScript__key
+    extension__extension__CurllmContentScript__getPageContext --> extension__extension__CurllmContentScript__getForms
+    extension__extension__CurllmContentScript__getPageContext --> extension__extension__CurllmContentScript__getLinks
+    extension__extension__CurllmContentScript__getPageContext --> extension__extension__CurllmContentScript__getImages
+    extension__extension__CurllmContentScript__getPageContext --> extension__extension__CurllmContentScript__getTables
+    extension__extension__CurllmContentScript__getPageContext --> extension__extension__CurllmContentScript__getMetadata
+    extension__extension__CurllmContentScript__name --> extension__extension__CurllmContentScript__executeAction
+    extension__extension__CurllmContentScript__executeAction --> extension__extension__CurllmContentScript__click
+    extension__extension__CurllmContentScript__executeAction --> extension__extension__CurllmContentScript__input
+    extension__extension__CurllmContentScript__executeAction --> extension__extension__CurllmContentScript__select
+    extension__extension__CurllmContentScript__executeAction --> extension__extension__CurllmContentScript__scroll
+    extension__extension__CurllmContentScript__executeAction --> extension__extension__CurllmContentScript__setTimeout
+    extension__extension__CurllmContentScript__executeAction --> extension__extension__CurllmContentScript__extract
+    extension__extension__CurllmContentScript__setTimeout --> extension__extension__CurllmContentScript__reject
+    extension__extension__CurllmContentScript__click --> extension__extension__CurllmContentScript__highlightElement
+    extension__extension__CurllmContentScript__element --> extension__extension__CurllmContentScript__resolve
+    extension__extension__CurllmContentScript__select --> extension__extension__CurllmContentScript__highlightElement
+    extension__extension__CurllmContentScript__startRecording --> extension__extension__CurllmContentScript__attachRecordingListeners
+    extension__extension__CurllmContentScript__startRecording --> extension__extension__CurllmContentScript__showRecordingOverlay
+    extension__extension__CurllmContentScript__stopRecording --> extension__extension__CurllmContentScript__removeRecordingListeners
+    extension__extension__CurllmContentScript__stopRecording --> extension__extension__CurllmContentScript__hideRecordingOverlay
+    extension__extension__CurllmContentScript__attachRecordingListeners --> extension__extension__CurllmContentScript__getSelector
+    extension__extension__CurllmContentScript__enableElementPicker --> extension__extension__CurllmContentScript__getSelector
+    extension__extension__CurllmContentScript__enableElementPicker --> extension__extension__CurllmContentScript__disableElementPicker
+    extension__extension__CurllmContentScript__highlightElement --> extension__extension__CurllmContentScript__setTimeout
+    extension__extension__CurllmContentScript__injectHelpers --> extension__extension__CurllmContentScript__resolve
+    extension__extension__CurllmContentScript__script --> extension__extension__CurllmContentScript__resolve
+    extension__extension__CurllmContentScript__observer --> extension__extension__CurllmContentScript__resolve
+    examples__orchestration__orchestrator_example__example_master_orchestrator --> monitoring__website_monitor__print

@@ -19,7 +19,6 @@ import re
 import json
 from typing import Any, Dict, Optional
 
-from curllm_core.config import config
 
 async def generic_fastpath(instruction: str, page, run_logger=None) -> Optional[Dict[str, Any]]:
     lower_instr = (instruction or "").lower()

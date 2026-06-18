@@ -2,8 +2,7 @@
 import json
 import os
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple, Union
-from urllib.parse import urlparse
+from typing import Any, Dict, List, Optional, Union
 from urllib.request import urlopen
 
 ProxyConfig = Union[str, Dict[str, Any], None]

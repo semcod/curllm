@@ -1,0 +1,834 @@
+# code2llm | 586f 111876L | python:516,shell:28,yaml:13,json:5,javascript:5,yml:4,txt:3,toml:2,php:1 | 2026-06-06
+# generated in 0.29s
+# CC̅=4.8 | critical:117/2552 | dups:16 | cycles:0
+
+HEALTH[20]:
+  🔴 DUP   16 classes duplicated
+  🔴 GOD   captcha/captcha_solver.py = 768L, 6 classes, 16m, max CC=14
+  🔴 GOD   curllm_core/planning/planner.py = 546L, 5 classes, 13m, max CC=17
+  🟡 CC    _run_action CC=23 (limit:15)
+  🟡 CC    _parse_actions_from_llm CC=19 (limit:15)
+  🟡 CC    parse_command CC=16 (limit:15)
+  🟡 CC    batch_create_posts CC=19 (limit:15)
+  🟡 CC    run_benchmark CC=15 (limit:15)
+  🟡 CC    send_email CC=15 (limit:15)
+  🟡 CC    curllmExtension CC=44 (limit:15)
+  🟡 CC    atomize CC=19 (limit:15)
+  🟡 CC    setup_playwright CC=28 (limit:15)
+  🟡 CC    _parse_prices_with_llm CC=15 (limit:15)
+  🟡 CC    main CC=17 (limit:15)
+  🟡 CC    analyze_form_fields_vision CC=21 (limit:15)
+  🟡 CC    build_vision_enhanced_field_list CC=15 (limit:15)
+  🟡 CC    create_vision_decision_tree CC=33 (limit:15)
+  🟡 CC    parse_runtime_from_instruction CC=15 (limit:15)
+  🟡 CC    log_form_summary CC=16 (limit:15)
+  🟡 CC    build_progressive_context CC=29 (limit:15)
+
+REFACTOR[4]:
+  1. rm duplicates  (-16 dup classes)
+  2. split captcha/captcha_solver.py  (god module)
+  3. split curllm_core/planning/planner.py  (god module)
+  4. split 17 high-CC methods  (CC>15)
+
+PIPELINES[1832]:
+  [1] Src [load_env]: load_env
+      PURITY: 100% pure
+  [2] Src [env_bool]: env_bool
+      PURITY: 100% pure
+  [3] Src [https]: https
+      PURITY: 100% pure
+  [4] Src [http]: http
+      PURITY: 100% pure
+  [5] Src [loadEnv]: loadEnv
+      PURITY: 100% pure
+  [6] Src [txt]: txt
+      PURITY: 100% pure
+  [7] Src [ENV_PATH]: ENV_PATH
+      PURITY: 100% pure
+  [8] Src [API_HOST]: API_HOST → asBool
+      PURITY: 100% pure
+  [9] Src [res]: res
+      PURITY: 100% pure
+  [10] Src [u]: u
+      PURITY: 100% pure
+  [11] Src [data]: data
+      PURITY: 100% pure
+  [12] Src [mod]: mod
+      PURITY: 100% pure
+  [13] Src [req]: req
+      PURITY: 100% pure
+  [14] Src [endpoint]: endpoint → postJsonFetch → text
+      PURITY: 100% pure
+  [15] Src [quick_extract]: quick_extract
+      PURITY: 100% pure
+  [16] Src [quick_extract_with_provider]: quick_extract_with_provider
+      PURITY: 100% pure
+  [17] Src [example_simple_extraction]: example_simple_extraction → print
+      PURITY: 100% pure
+  [18] Src [example_form_automation]: example_form_automation → print
+      PURITY: 100% pure
+  [19] Src [example_login_2fa]: example_login_2fa → print
+      PURITY: 100% pure
+  [20] Src [example_bql_query]: example_bql_query → print
+      PURITY: 100% pure
+  [21] Src [example_captcha_solving]: example_captcha_solving → print
+      PURITY: 100% pure
+  [22] Src [example_pdf_download]: example_pdf_download → print
+      PURITY: 100% pure
+  [23] Src [example_price_monitoring]: example_price_monitoring → print
+      PURITY: 100% pure
+  [24] Src [example_social_media_scraping]: example_social_media_scraping → print
+      PURITY: 100% pure
+  [25] Src [example_table_extraction]: example_table_extraction → print
+      PURITY: 100% pure
+  [26] Src [example_multi_step_workflow]: example_multi_step_workflow → print
+      PURITY: 100% pure
+  [27] Src [example_with_openai]: example_with_openai → print
+      PURITY: 100% pure
+  [28] Src [example_with_anthropic]: example_with_anthropic → print
+      PURITY: 100% pure
+  [29] Src [example_with_gemini]: example_with_gemini → print
+      PURITY: 100% pure
+  [30] Src [example_with_groq]: example_with_groq → print
+      PURITY: 100% pure
+  [31] Src [example_with_deepseek]: example_with_deepseek → print
+      PURITY: 100% pure
+  [32] Src [example_with_presets]: example_with_presets → print
+      PURITY: 100% pure
+  [33] Src [example_env_based_config]: example_env_based_config → print
+      PURITY: 100% pure
+  [34] Src [main]: main → print
+      PURITY: 100% pure
+  [35] Src [example_1_simple_browse]: example_1_simple_browse → print
+      PURITY: 100% pure
+  [36] Src [example_2_data_extraction]: example_2_data_extraction → print
+      PURITY: 100% pure
+  [37] Src [example_3_form_filling]: example_3_form_filling → print
+      PURITY: 100% pure
+  [38] Src [example_4_bql_query]: example_4_bql_query → print
+      PURITY: 100% pure
+  [39] Src [example_5_multi_format_export]: example_5_multi_format_export → print
+      PURITY: 100% pure
+  [40] Src [example_6_batch_processing]: example_6_batch_processing → print
+      PURITY: 100% pure
+  [41] Src [example_7_conditional_routing]: example_7_conditional_routing → print
+      PURITY: 100% pure
+  [42] Src [example_8_scraping_pipeline]: example_8_scraping_pipeline → print
+      PURITY: 100% pure
+  [43] Src [example_9_yaml_flow]: example_9_yaml_flow → print
+      PURITY: 100% pure
+  [44] Src [example_10_http_to_scraping]: example_10_http_to_scraping → print
+      PURITY: 100% pure
+  [45] Src [example_11_screenshot_capture]: example_11_screenshot_capture → print
+      PURITY: 100% pure
+  [46] Src [example_12_data_validation]: example_12_data_validation → print
+      PURITY: 100% pure
+  [47] Src [example_13_file_operations]: example_13_file_operations → print
+      PURITY: 100% pure
+  [48] Src [example_14_transform_pipeline]: example_14_transform_pipeline → print
+      PURITY: 100% pure
+  [49] Src [example_15_metrics_tracking]: example_15_metrics_tracking → print
+      PURITY: 100% pure
+  [50] Src [example_skapiec]: example_skapiec → print
+      PURITY: 100% pure
+
+LAYERS:
+  captcha/                        CC̄=6.2    ←in:2  →out:48  !! split
+  │ !! captcha_solver             768L  6C   16m  CC=14     ←0
+  │ !! playwright_bql_framework   624L  2C   15m  CC=23     ←2
+  │ allegro_captcha_solver     395L  1C    5m  CC=14     ←0
+  │ __init__                     0L  0C    0m  CC=0.0    ←0
+  │
+  scripts/                        CC̄=5.9    ←in:68  →out:179  !! split
+  │ !! dependency_report.json    3023L  0C    0m  CC=0.0    ←0
+  │ dev_watcher                442L  4C   21m  CC=12     ←2
+  │ refactor_to_llm_dsl        393L  4C   13m  CC=13     ←0
+  │ !! find_hardcoded             361L  2C    8m  CC=16     ←0
+  │ analyze_dependencies       327L  0C   10m  CC=13     ←0
+  │ !! analyze_deps               313L  0C    8m  CC=17     ←0
+  │ !! fix_missing_loggers        309L  0C    6m  CC=23     ←0
+  │ !! atomize_module             163L  1C    4m  CC=19     ←0
+  │ reorganize_versions        132L  0C    2m  CC=5      ←0
+  │ code_quality               104L  0C    2m  CC=14     ←0
+  │ start.sh                    58L  0C    0m  CC=0.0    ←0
+  │ stop.sh                     34L  0C    0m  CC=0.0    ←0
+  │ status.sh                   22L  0C    0m  CC=0.0    ←0
+  │ bootstrap.sh                21L  0C    0m  CC=0.0    ←0
+  │ setup.sh                    10L  0C    0m  CC=0.0    ←0
+  │
+  curllm_core/                    CC̄=5.4    ←in:51  →out:243  !! split  ×DUP
+  │ !! resolver                  1203L  1C   23m  CC=25     ←0
+  │ !! iterative_extractor       1051L  1C   11m  CC=36     ←2
+  │ !! orchestrator               771L  1C   12m  CC=26     ←0
+  │ !! curllm_executor            762L  1C   21m  CC=125    ←0
+  │ !! smart_form_orchestrator    758L  1C   21m  CC=13     ←0
+  │ !! planner                    758L  0C   12m  CC=31     ←1
+  │ !! auth                       738L  3C   18m  CC=18     ←0
+  │ !! task_validator             733L  1C   18m  CC=30     ←0
+  │ !! orchestrator               725L  1C   22m  CC=8      ←0
+  │ !! detector                   702L  3C   15m  CC=18     ←2
+  │ !! orchestrator               700L  0C    4m  CC=89     ←0
+  │ !! llm_element_finder         678L  1C   19m  CC=10     ←0
+  │ !! extractor                  674L  0C   17m  CC=33     ←8
+  │ !! social                     664L  2C   17m  CC=19     ←0
+  │ !! runner                     643L  0C    2m  CC=121    ←0
+  │ !! js_scripts                 640L  0C    3m  CC=7      ←1
+  │ !! filler                     638L  0C    7m  CC=24     ←0
+  │ !! llm_patterns               625L  0C    8m  CC=12     ←0
+  │ !! live                       608L  2C   21m  CC=19     ←0
+  │ !! master                     559L  3C   19m  CC=10     ←0
+  │ !! planner                    546L  5C   13m  CC=17     ←0
+  │ !! url_resolver_llm           540L  2C   11m  CC=21     ←0
+  │ !! atoms                      525L  2C   14m  CC=11     ←0
+  │ !! orchestrator_steps         519L  1C   14m  CC=32     ←0
+  │ !! filler                     497L  0C   13m  CC=33     ←0
+  │ !! llm_guided_extractor       492L  1C   12m  CC=15     ←2
+  │ !! llm_form_orchestrator      482L  0C    6m  CC=29     ←0
+  │ translator                 475L  1C   12m  CC=8      ←2
+  │ vision_solve               466L  0C    8m  CC=10     ←1
+  │ !! ecommerce                  459L  2C   12m  CC=24     ←0
+  │ llm_extractor              458L  1C   16m  CC=14     ←0
+  │ !! dynamic_container_detector   457L  1C    6m  CC=19     ←1
+  │ element_finder             456L  2C   11m  CC=14     ←0
+  │ parser                     454L  3C   12m  CC=12     ←0
+  │ extraction_orchestrator    452L  1C   18m  CC=13     ←0
+  │ form                       446L  1C   11m  CC=9      ←0
+  │ dom_fix                    441L  4C   16m  CC=12     ←0
+  │ dom_statistics             439L  2C   11m  CC=10     ←0
+  │ selector_generator         438L  2C   14m  CC=8      ←0
+  │ llm_social_orchestrator    434L  1C   12m  CC=9      ←0
+  │ llm_factory                433L  4C   19m  CC=8      ←3
+  │ !! task_router                428L  2C    9m  CC=15     ←0
+  │ !! llm_container_validator    422L  2C    8m  CC=29     ←0
+  │ !! intent_detector            422L  4C    7m  CC=31     ←1
+  │ decision                   405L  4C   16m  CC=10     ←0
+  │ goal_detector_llm          401L  3C   14m  CC=9      ←0
+  │ semantic                   399L  3C   11m  CC=13     ←0
+  │ !! task_runner_tools          393L  0C   14m  CC=25     ←0
+  │ curllm                     393L  2C   21m  CC=8      ←2
+  │ extraction                 392L  1C   15m  CC=14     ←0
+  │ !! llm_client                 391L  1C   14m  CC=22     ←1
+  │ data_exporter              391L  1C   10m  CC=8      ←0
+  │ llm_decision               390L  0C    8m  CC=11     ←1
+  │ dom_selectors              390L  0C    4m  CC=11     ←0
+  │ structural                 389L  1C   10m  CC=12     ←0
+  │ composite                  382L  4C    9m  CC=12     ←0
+  │ selectors                  377L  1C    8m  CC=14     ←0
+  │ !! vision_form_analysis       374L  0C    3m  CC=33     ←2
+  │ !! multi_criteria_filter      373L  2C    7m  CC=34     ←0
+  │ rules                      366L  2C   15m  CC=11     ←0
+  │ !! hybrid_selector_ranker     364L  1C    6m  CC=18     ←0
+  │ !! bql_extraction_orchestrator   363L  1C   14m  CC=15     ←0  ×DUP
+  │ feedback                   357L  2C   16m  CC=6      ←0
+  │ atomic_functions           355L  1C   13m  CC=14     ←0
+  │ !! metrics                    354L  2C   13m  CC=26     ←0
+  │ !! llm_heuristics             346L  2C    7m  CC=23     ←0
+  │ !! llm_planner                343L  0C    1m  CC=80     ←2
+  │ doctor                     337L  0C   16m  CC=10     ←0
+  │ llm_bridge                 335L  1C   13m  CC=10     ←0
+  │ llm_auth_orchestrator      335L  1C   12m  CC=11     ←0
+  │ submit                     334L  0C    7m  CC=6      ←2
+  │ !! prompt_dsl                 332L  0C    6m  CC=17     ←0
+  │ atomic_query               330L  3C   17m  CC=8      ←1
+  │ rate_limiter               329L  2C   14m  CC=5      ←0
+  │ !! result_corrector           328L  1C    6m  CC=18     ←1
+  │ client                     327L  2C   11m  CC=10     ←0  ×DUP
+  │ !! validator                  326L  3C    6m  CC=29     ←0
+  │ !! universal_field_extractor   322L  1C    7m  CC=21     ←0
+  │ !! result_evaluator           322L  0C    1m  CC=85     ←1
+  │ patterns                   311L  1C    4m  CC=1      ←0
+  │ form_detector              302L  0C    3m  CC=11     ←1
+  │ extractor                  299L  0C    6m  CC=8      ←0
+  │ hierarchical_planner_v2    298L  1C   10m  CC=8      ←0
+  │ llm_filter_validator       295L  1C    6m  CC=7      ←0
+  │ config_logger              293L  0C    6m  CC=6      ←2
+  │ !! instruction_parser         291L  3C    5m  CC=16     ←0
+  │ !! wordpress                  291L  1C    6m  CC=26     ←0
+  │ messages                   291L  1C    4m  CC=11     ←0
+  │ selectors                  290L  1C    4m  CC=1      ←0
+  │ error_handler              289L  0C    5m  CC=11     ←0
+  │ semantic_query             287L  4C    9m  CC=9      ←1
+  │ llme_commerce_orchestrator   284L  1C    9m  CC=11     ←0
+  │ url_patterns               283L  0C    1m  CC=5      ←0
+  │ field_detector             283L  0C    5m  CC=13     ←1
+  │ retry                      278L  4C    9m  CC=10     ←0
+  │ yaml_runner                277L  1C   12m  CC=8      ←2
+  │ parser                     277L  3C   18m  CC=8      ←0  ×DUP
+  │ !! form_analysis              277L  1C    9m  CC=15     ←0
+  │ visual                     276L  1C    7m  CC=8      ←0
+  │ !! context_optimizer          274L  0C    8m  CC=16     ←0
+  │ container                  271L  0C    3m  CC=5      ←1
+  │ prices                     270L  1C    4m  CC=1      ←0
+  │ actions                    260L  0C    6m  CC=10     ←0
+  │ llm_extractor              256L  1C    9m  CC=8      ←0
+  │ flow                       254L  1C   13m  CC=8      ←9
+  │ scoring                    254L  1C    3m  CC=1      ←0
+  │ !! browser_setup              253L  1C    9m  CC=28     ←3  ×DUP
+  │ !! server                     253L  0C    8m  CC=27     ←0
+  │ container_finder           253L  0C    4m  CC=14     ←1
+  │ structure                  251L  1C    6m  CC=1      ←0
+  │ llm_config                 249L  2C   16m  CC=4      ←0
+  │ flow                       247L  0C    8m  CC=8      ←0
+  │ patterns                   247L  1C    4m  CC=4      ←0
+  │ planner                    244L  1C    8m  CC=14     ←0
+  │ orchestrator               244L  1C   15m  CC=4      ←0  ×DUP
+  │ goal_detector_hybrid       243L  1C    7m  CC=13     ←0
+  │ !! progressive_context        242L  0C    5m  CC=29     ←1
+  │ task_runner_early          239L  0C    6m  CC=11     ←0
+  │ extraction_registry        239L  4C   11m  CC=10     ←0
+  │ solve                      236L  1C    8m  CC=12     ←2
+  │ page_analyzer              235L  0C    4m  CC=6      ←2
+  │ !! result_store               229L  0C   11m  CC=21     ←0
+  │ generator                  226L  3C    5m  CC=7      ←0
+  │ clustering                 223L  1C    3m  CC=1      ←0
+  │ !! executor                   215L  1C   11m  CC=15     ←0  ×DUP
+  │ task_runner_steps          214L  0C    5m  CC=12     ←0
+  │ frequency                  214L  1C    5m  CC=1      ←0
+  │ file                       212L  2C   10m  CC=8      ←0
+  │ !! page_context               210L  0C    1m  CC=22     ←4
+  │ urls                       210L  1C    6m  CC=14     ←0
+  │ executor                   207L  2C    7m  CC=10     ←0
+  │ stealth                    204L  1C    9m  CC=4      ←2  ×DUP
+  │ !! proxy                      202L  1C    6m  CC=45     ←1
+  │ !! transform                  201L  3C    8m  CC=16     ←0
+  │ analyze                    195L  0C    4m  CC=4      ←0
+  │ !! cli_orchestrator           195L  0C    2m  CC=25     ←0
+  │ orchestrator               191L  1C    5m  CC=10     ←0
+  │ analyzer                   190L  1C    7m  CC=5      ←0
+  │ llm_form_orchestrator      189L  1C    7m  CC=11     ←0
+  │ detect                     185L  1C    1m  CC=2      ←4
+  │ bql_parser                 185L  1C   17m  CC=8      ←0  ×DUP
+  │ setup                      181L  0C   12m  CC=4      ←0
+  │ !! task_runner_fallback       180L  0C    3m  CC=19     ←0
+  │ setup                      180L  1C    8m  CC=6      ←0  ×DUP
+  │ !! shortcuts                  178L  0C    7m  CC=19     ←0
+  │ context                    178L  0C    3m  CC=4      ←0
+  │ proxy                      178L  2C   10m  CC=5      ←0
+  │ selector                   177L  0C    2m  CC=10     ←0
+  │ utils                      177L  0C    6m  CC=12     ←0
+  │ !! runtime                    176L  0C    3m  CC=15     ←2
+  │ !! navigation                 175L  0C    1m  CC=50     ←0
+  │ !! human_verify               164L  0C    2m  CC=31     ←4
+  │ tools                      162L  0C    4m  CC=11     ←0
+  │ screenshots                161L  0C    7m  CC=8      ←1
+  │ !! find_search_input          160L  0C    1m  CC=17     ←1
+  │ capture                    156L  0C    4m  CC=4      ←0
+  │ wait_for_hydration         156L  0C    4m  CC=6      ←0
+  │ map_fields                 155L  0C    4m  CC=8      ←0
+  │ !! bql_executor               155L  1C   11m  CC=15     ←0  ×DUP
+  │ core                       153L  3C   11m  CC=2      ←0
+  │ stealth                    151L  1C    3m  CC=1      ←0  ×DUP
+  │ registry                   149L  0C    8m  CC=2      ←13
+  │ llm_hierarchical_planner   148L  1C    6m  CC=5      ←1
+  │ web                        147L  2C    5m  CC=9      ←0
+  │ query                      146L  0C    6m  CC=3      ←0
+  │ factory                    138L  0C    4m  CC=7      ←0
+  │ tool_retry                 130L  1C    6m  CC=3      ←0
+  │ !! _find_link_keyword_fallback   129L  0C    1m  CC=19     ←1
+  │ !! llm_form_fill              128L  0C    1m  CC=23     ←2
+  │ feedback                   124L  0C    1m  CC=13     ←0
+  │ llm_success_evaluator      122L  1C    4m  CC=7      ←0
+  │ registry                   118L  1C   10m  CC=10     ←1
+  │ !! slider_plugin              115L  0C    2m  CC=29     ←2
+  │ !! price_filter               113L  1C    1m  CC=15     ←0
+  │ config                     111L  1C    1m  CC=1      ←0
+  │ base                       111L  1C    7m  CC=12     ←0
+  │ diagnostics                111L  0C    2m  CC=14     ←1
+  │ llm_field_analyzer         110L  1C    5m  CC=8      ←0
+  │ fill                       108L  0C    2m  CC=11     ←1
+  │ llm_submit_detector        107L  1C    4m  CC=13     ←0
+  │ __init__                   106L  0C    0m  CC=0.0    ←0
+  │ split_component            100L  1C    4m  CC=10     ←0
+  │ url_types                   98L  3C    0m  CC=0.0    ←0
+  │ detect                      97L  0C    3m  CC=4      ←1
+  │ choose_component            96L  1C    5m  CC=4      ←0
+  │ captcha_widget              95L  0C    2m  CC=13     ←0
+  │ !! remediation                 95L  0C    2m  CC=22     ←0
+  │ uri                         95L  1C    9m  CC=8      ←0
+  │ captcha                     94L  1C    5m  CC=10     ←0  ×DUP
+  │ find_inputs                 89L  0C    1m  CC=10     ←1
+  │ llm_action_planner          85L  1C    3m  CC=7      ←0
+  │ !! captcha_slider              83L  0C    2m  CC=15     ←4
+  │ __init__                    83L  0C    0m  CC=0.0    ←0
+  │ field_filler                81L  0C    3m  CC=5      ←1
+  │ !! planner_progress            75L  0C    1m  CC=19     ←0
+  │ smart_form_fill             74L  0C    1m  CC=10     ←0
+  │ __init__                    74L  0C    0m  CC=0.0    ←0
+  │ filter_component            70L  1C    3m  CC=5      ←0
+  │ __init__                    70L  0C    0m  CC=0.0    ←0
+  │ extract_all_links           68L  0C    1m  CC=2      ←6
+  │ metrics                     67L  1C    5m  CC=2      ←0
+  │ scroll_load                 66L  1C    1m  CC=7      ←0
+  │ execute_search              66L  0C    1m  CC=7      ←0
+  │ llm                         64L  1C    3m  CC=4      ←0  ×DUP
+  │ submit_form_llm             64L  0C    1m  CC=3      ←0
+  │ analyze_page_type           64L  0C    1m  CC=1      ←0
+  │ page_utils                  63L  0C    3m  CC=8      ←1
+  │ _find_link_with_llm         62L  0C    1m  CC=10     ←1
+  │ orchestrator_config         59L  1C    2m  CC=3      ←0
+  │ llm_decision_component      56L  1C    4m  CC=3      ←0
+  │ __init__                    55L  0C    0m  CC=0.0    ←0
+  │ __init__                    54L  0C    0m  CC=0.0    ←0
+  │ find_buttons                52L  0C    1m  CC=5      ←0
+  │ parser                      52L  0C    2m  CC=11     ←4
+  │ models                      51L  3C    0m  CC=0.0    ←0
+  │ __init__                    50L  0C    0m  CC=0.0    ←0
+  │ __init__                    50L  0C    0m  CC=0.0    ←0
+  │ __init__                    50L  0C    0m  CC=0.0    ←0
+  │ _should_validate            48L  0C    1m  CC=1      ←0
+  │ multicast_component         47L  1C    1m  CC=6      ←0
+  │ find_elements_by_role       47L  0C    1m  CC=5      ←0
+  │ _find_link_statistical      46L  0C    1m  CC=10     ←1
+  │ __init__                    45L  0C    0m  CC=0.0    ←0
+  │ batch_process               44L  0C    1m  CC=5      ←0
+  │ retry                       44L  0C    1m  CC=1      ←0
+  │ browserless                 43L  2C   10m  CC=1      ←0  ×DUP
+  │ __init__                    43L  0C    0m  CC=0.0    ←0
+  │ __init__                    43L  0C    0m  CC=0.0    ←0
+  │ find_link_for_goal          42L  0C    1m  CC=5      ←1
+  │ join_component              41L  1C    2m  CC=5      ←0
+  │ __init__                    41L  0C    0m  CC=0.0    ←0
+  │ find_links_by_text          40L  0C    1m  CC=9      ←1
+  │ vision                      39L  1C    3m  CC=3      ←0  ×DUP
+  │ agent_factory               38L  1C    2m  CC=4      ←0
+  │ _extract_values_with_llm    37L  0C    1m  CC=3      ←1
+  │ __init__                    37L  0C    0m  CC=0.0    ←0
+  │ __init__                    37L  0C    0m  CC=0.0    ←0
+  │ find_links_by_url_pattern    34L  0C    1m  CC=5      ←1
+  │ validate_data               33L  0C    1m  CC=1      ←0
+  │ pipeline                    33L  0C    1m  CC=3      ←2
+  │ try_direct_urls             33L  0C    1m  CC=5      ←0
+  │ find_links_by_aria          33L  0C    1m  CC=6      ←1
+  │ validate_task               33L  0C    1m  CC=1      ←0
+  │ exceptions                  33L  6C    0m  CC=0.0    ←0
+  │ split                       32L  0C    1m  CC=3      ←2
+  │ __init__                    31L  0C    0m  CC=0.0    ←0
+  │ __init__                    31L  0C    0m  CC=0.0    ←0
+  │ __init__                    30L  0C    0m  CC=0.0    ←0
+  │ smart_fill_form             29L  0C    1m  CC=1      ←0
+  │ step_result                 29L  1C    0m  CC=0.0    ←0
+  │ hierarchical_planner        29L  0C    0m  CC=0.0    ←0
+  │ __init__                    29L  0C    0m  CC=0.0    ←0
+  │ compose                     28L  0C    1m  CC=1      ←0
+  │ choose                      28L  0C    1m  CC=1      ←2
+  │ extract_strategic_context    28L  0C    2m  CC=4      ←1
+  │ extract_with_llm            28L  0C    1m  CC=1      ←0
+  │ llm_extract                 28L  0C    1m  CC=2      ←0
+  │ execute_command             28L  0C    1m  CC=1      ←0
+  │ __init__                    28L  0C    0m  CC=0.0    ←0
+  │ validation_utils            27L  0C    1m  CC=13     ←1
+  │ rerun_cmd                   27L  0C    1m  CC=7      ←1
+  │ find                        27L  0C    1m  CC=1      ←0
+  │ cli_orchestrator            27L  0C    0m  CC=0.0    ←0
+  │ __init__                    27L  0C    0m  CC=0.0    ←0
+  │ __init__                    27L  0C    0m  CC=0.0    ←0
+  │ multicast                   26L  0C    1m  CC=1      ←2
+  │ detect_navigation_goal      25L  0C    1m  CC=1      ←0
+  │ join                        25L  0C    1m  CC=1      ←2
+  │ __init__                    25L  0C    0m  CC=0.0    ←0
+  │ actions                     24L  0C    2m  CC=2      ←4
+  │ headers                     24L  0C    1m  CC=9      ←1
+  │ describe_component          24L  0C    1m  CC=3      ←1
+  │ web                         24L  0C    1m  CC=3      ←0
+  │ shopping_result             24L  1C    1m  CC=3      ←0
+  │ __init__                    24L  0C    0m  CC=0.0    ←0
+  │ __init__                    24L  0C    0m  CC=0.0    ←0
+  │ __init__                    23L  0C    0m  CC=0.0    ←0
+  │ enable_diagnostics          22L  0C    1m  CC=1      ←2
+  │ orchestrator_result         22L  1C    0m  CC=0.0    ←0
+  │ __init__                    22L  0C    0m  CC=0.0    ←0
+  │ __init__                    22L  0C    0m  CC=0.0    ←0
+  │ __init__                    22L  0C    0m  CC=0.0    ←0
+  │ dom_utils                   21L  0C    1m  CC=1      ←0
+  │ validation_report           20L  1C    0m  CC=0.0    ←0
+  │ __init__                    20L  0C    0m  CC=0.0    ←0
+  │ __init__                    20L  0C    0m  CC=0.0    ←0
+  │ __init__                    20L  0C    0m  CC=0.0    ←0
+  │ form_result                 19L  1C    1m  CC=2      ←0
+  │ bql_node                    19L  1C    1m  CC=3      ←0
+  │ link_info                   19L  1C    0m  CC=0.0    ←0
+  │ __init__                    18L  0C    3m  CC=1      ←0
+  │ __init__                    18L  0C    3m  CC=1      ←0
+  │ find_element_with_llm       18L  0C    1m  CC=1      ←0
+  │ find_links_by_location      18L  0C    1m  CC=3      ←0
+  │ _simple_parse               18L  0C    1m  CC=4      ←1
+  │ page_context                18L  1C    0m  CC=0.0    ←0
+  │ __init__                    18L  0C    0m  CC=0.0    ←0
+  │ __init__                    18L  0C    0m  CC=0.0    ←0
+  │ _trigger_field_events       17L  0C    1m  CC=1      ←2
+  │ element_info                17L  1C    0m  CC=0.0    ←0
+  │ auth_result                 17L  1C    0m  CC=0.0    ←0
+  │ social_result               17L  1C    0m  CC=0.0    ←0
+  │ form_fill_result            17L  1C    0m  CC=0.0    ←0
+  │ __init__                    17L  0C    0m  CC=0.0    ←0
+  │ should_use_hierarchical_llm    16L  0C    1m  CC=1      ←0
+  │ element_match               16L  1C    0m  CC=0.0    ←0
+  │ shopping_intent             16L  1C    0m  CC=0.0    ←0
+  │ social_intent               16L  1C    0m  CC=0.0    ←0
+  │ social_platform             16L  1C    0m  CC=0.0    ←0
+  │ field_mapping               16L  1C    0m  CC=0.0    ←0
+  │ validation_strategy         16L  1C    0m  CC=0.0    ←0
+  │ validation_check            16L  1C    0m  CC=0.0    ←0
+  │ query_type                  16L  1C    0m  CC=0.0    ←0
+  │ list_available_components    15L  0C    1m  CC=1      ←0
+  │ execute                     15L  0C    1m  CC=1      ←0
+  │ auth_credentials            15L  1C    0m  CC=0.0    ←0
+  │ form_field                  15L  1C    0m  CC=0.0    ←0
+  │ __init__                    15L  0C    0m  CC=0.0    ←0
+  │ __init__                    15L  0C    0m  CC=0.0    ←0
+  │ has_content_type            14L  0C    1m  CC=1      ←0
+  │ auth_method                 14L  1C    0m  CC=0.0    ←0
+  │ __init__                    14L  0C    0m  CC=0.0    ←0
+  │ __init__                    14L  0C    0m  CC=0.0    ←0
+  │ __init__                    14L  0C    0m  CC=0.0    ←0
+  │ goal_detection_result       13L  1C    0m  CC=0.0    ←0
+  │ extraction_result           13L  1C    0m  CC=0.0    ←0
+  │ extraction_request          13L  1C    0m  CC=0.0    ←0
+  │ checkout_step               13L  1C    0m  CC=0.0    ←0
+  │ __init__                    13L  0C    0m  CC=0.0    ←0
+  │ export_excel                12L  0C    1m  CC=1      ←0
+  │ export_csv                  12L  0C    1m  CC=1      ←0
+  │ export_markdown             12L  0C    1m  CC=1      ←0
+  │ export_json                 12L  0C    1m  CC=1      ←0
+  │ logger                      12L  0C    0m  CC=0.0    ←0
+  │ __init__                    12L  0C    0m  CC=0.0    ←0
+  │ __init__                    11L  0C    0m  CC=0.0    ←0
+  │ __init__                    11L  0C    0m  CC=0.0    ←0
+  │ __init__                    11L  0C    0m  CC=0.0    ←0
+  │ __init__                    11L  0C    0m  CC=0.0    ←0
+  │ __init__                    10L  0C    0m  CC=0.0    ←0
+  │ __init__                    10L  0C    0m  CC=0.0    ←0
+  │ __init__                    10L  0C    0m  CC=0.0    ←0
+  │ __init__                    10L  0C    0m  CC=0.0    ←0
+  │ __init__                    10L  0C    0m  CC=0.0    ←0
+  │ __init__                     9L  0C    0m  CC=0.0    ←0
+  │ __init__                     9L  0C    0m  CC=0.0    ←0
+  │ __init__                     9L  0C    0m  CC=0.0    ←0
+  │ __init__                     9L  0C    0m  CC=0.0    ←0
+  │ __init__                     9L  0C    0m  CC=0.0    ←0
+  │ __init__                     8L  0C    0m  CC=0.0    ←0
+  │ __init__                     8L  0C    0m  CC=0.0    ←0
+  │ __init__                     8L  0C    0m  CC=0.0    ←0
+  │ __init__                     7L  0C    0m  CC=0.0    ←0
+  │ __init__                     7L  0C    0m  CC=0.0    ←0
+  │ __init__                     7L  0C    0m  CC=0.0    ←0
+  │ __init__                     7L  0C    0m  CC=0.0    ←0
+  │ __init__                     7L  0C    0m  CC=0.0    ←0
+  │ bql_utils                    4L  0C    1m  CC=3      ←0
+  │ url_resolver                 4L  0C    0m  CC=0.0    ←0
+  │ executor                     4L  0C    0m  CC=0.0    ←0
+  │ dynamic_detector             3L  0C    0m  CC=0.0    ←0
+  │ llm_element_finder           3L  0C    0m  CC=0.0    ←0
+  │ llm_field_filler             3L  0C    0m  CC=0.0    ←0
+  │ command_parser               3L  0C    0m  CC=0.0    ←0
+  │ task_planner                 3L  0C    0m  CC=0.0    ←0
+  │ orchestrator                 3L  0C    0m  CC=0.0    ←0
+  │ task_runner                  3L  0C    0m  CC=0.0    ←0
+  │ result_validator             3L  0C    0m  CC=0.0    ←0
+  │ llm_transparent_orchestrator     3L  0C    0m  CC=0.0    ←0
+  │ dom_helpers                  2L  0C    0m  CC=0.0    ←0
+  │ __init__                     1L  0C    0m  CC=0.0    ←0
+  │ __init__                     1L  0C    0m  CC=0.0    ←0
+  │ __init__                     1L  0C    0m  CC=0.0    ←0
+  │ __init__                     1L  0C    0m  CC=0.0    ←0
+  │ __init__                     1L  0C    0m  CC=0.0    ←0
+  │ !! form_fill                    0L  0C    2m  CC=154    ←1
+  │
+  pricing/                        CC̄=4.9    ←in:0  →out:22  !! split
+  │ !! app                        849L  3C   16m  CC=11     ←0
+  │ Makefile                    99L  0C    0m  CC=0.0    ←0
+  │ docker-compose.yml          70L  0C    0m  CC=0.0    ←0
+  │ Dockerfile                  60L  0C    0m  CC=0.0    ←0
+  │ url.txt                     48L  0C    0m  CC=0.0    ←0
+  │ requirements.txt            31L  0C    0m  CC=0.0    ←0
+  │ __init__                    11L  0C    0m  CC=0.0    ←0
+  │
+  curlx_pkg/                      CC̄=4.7    ←in:0  →out:0
+  │ cli                        145L  0C    7m  CC=11     ←0
+  │ pyproject.toml              66L  0C    0m  CC=0.0    ←0
+  │ Makefile                    29L  0C    0m  CC=0.0    ←0
+  │ __init__                     3L  0C    0m  CC=0.0    ←0
+  │
+  static/                         CC̄=4.2    ←in:0  →out:0
+  │ !! app.js                    1162L  0C  123m  CC=23     ←0
+  │
+  bql/                            CC̄=3.9    ←in:0  →out:3  ×DUP
+  │ bql_parser                 303L  1C   17m  CC=8      ←0  ×DUP
+  │ !! bql_executor               214L  1C   11m  CC=15     ←0  ×DUP
+  │ examples                    53L  0C    0m  CC=0.0    ←0
+  │ __main__                    23L  0C    1m  CC=3      ←0
+  │ bql_node                    19L  1C    1m  CC=3      ←0
+  │ __init__                    18L  0C    0m  CC=0.0    ←0
+  │ query_type                  15L  1C    0m  CC=0.0    ←0
+  │ __init__                     6L  0C    0m  CC=0.0    ←0
+  │ __init__                     5L  0C    0m  CC=0.0    ←0
+  │ __init__                     5L  0C    0m  CC=0.0    ←0
+  │
+  forms/                          CC̄=3.5    ←in:0  →out:8  !! split
+  │ app                        492L  4C   12m  CC=8      ←0
+  │ docker-compose.yml          40L  0C    0m  CC=0.0    ←0
+  │ Dockerfile                  32L  0C    0m  CC=0.0    ←0
+  │ Makefile                    30L  0C    0m  CC=0.0    ←0
+  │ __init__                    11L  0C    0m  CC=0.0    ←0
+  │
+  functions/                      CC̄=3.5    ←in:72  →out:7
+  │ registry                   427L  2C   21m  CC=10     ←3
+  │ generator                  414L  1C   10m  CC=11     ←0
+  │ safety.js                  335L  2C   30m  CC=7      ←146
+  │ extractors.js              326L  0C   31m  CC=12     ←0
+  │ fallback                   275L  3C    9m  CC=8      ←0
+  │ registry                   263L  2C   14m  CC=14     ←41
+  │ sanitize                   259L  0C    8m  CC=6      ←0
+  │ wrapper                    252L  2C    9m  CC=6      ←0
+  │ validate                   232L  2C   18m  CC=6      ←0
+  │ filter_specs               161L  0C    4m  CC=6      ←0
+  │ extract_brand              113L  0C    2m  CC=12     ←0
+  │ validate_name              112L  0C    1m  CC=7      ←0
+  │ extract_polish             111L  0C    2m  CC=11     ←1
+  │ clean_name                  95L  0C    1m  CC=6      ←1
+  │ price_polish                88L  0C    2m  CC=5      ←0
+  │ extract_title               64L  0C    1m  CC=10     ←0
+  │ extract_any                 63L  0C    1m  CC=7      ←0
+  │ extract_range               61L  0C    1m  CC=7      ←0
+  │ normalize                   60L  0C    1m  CC=7      ←4
+  │ extract_usd                 57L  0C    1m  CC=5      ←1
+  │ price_euro                  50L  0C    1m  CC=5      ←0
+  │ extract_euro                49L  0C    1m  CC=4      ←1
+  │ extract_name                46L  0C    1m  CC=4      ←0
+  │ __init__                    38L  0C    0m  CC=0.0    ←0
+  │ __init__                    24L  0C    0m  CC=0.0    ←0
+  │ __init__                    22L  0C    0m  CC=0.0    ←0
+  │ __init__                    21L  0C    0m  CC=0.0    ←0
+  │ __init__                    20L  0C    0m  CC=0.0    ←0
+  │ __init__                    19L  0C    0m  CC=0.0    ←0
+  │ __init__                     1L  0C    0m  CC=0.0    ←0
+  │
+  curllm_logs/                    CC̄=3.3    ←in:3  →out:9  !! split
+  │ screenshots                382L  2C   17m  CC=8      ←0
+  │ log_writer                 364L  4C   16m  CC=14     ←0
+  │ !! run_logger                 340L  1C   18m  CC=16     ←1
+  │ log_entry                  215L  6C    6m  CC=4      ←0
+  │ log_session                184L  1C   15m  CC=10     ←1
+  │ __init__                    75L  0C    0m  CC=0.0    ←0
+  │ log_config                  62L  1C    3m  CC=2      ←0
+  │
+  examples/                       CC̄=3.2    ←in:0  →out:72  !! split
+  │ streamware_examples        340L  0C   15m  CC=2      ←0
+  │ !! example_complete_flow      335L  0C    3m  CC=16     ←0
+  │ atomic_query_example       334L  0C    6m  CC=3      ←0
+  │ dynamic_detection_example   312L  0C    5m  CC=5      ←0
+  │ llm_heuristics_example     228L  0C    1m  CC=13     ←0
+  │ orchestrator_example       175L  0C    5m  CC=3      ←0
+  │ semantic_query_example     158L  0C    3m  CC=3      ←0
+  │ v2_usage                   152L  0C    5m  CC=3      ←0
+  │ streamware_quickstart      150L  0C    1m  CC=2      ←0
+  │ currency_example           147L  0C    1m  CC=9      ←0
+  │ example_auto_detect        146L  0C    3m  CC=4      ←0
+  │ example_find_info          140L  0C    3m  CC=6      ←0
+  │ !! multi_provider_benchmark   125L  0C    3m  CC=15     ←0
+  │ example_find_contact       120L  0C    3m  CC=5      ←0
+  │ example_find_products      112L  0C    3m  CC=4      ←6
+  │ example_shopping_flow      112L  0C    2m  CC=3      ←0
+  │ node_api_example.js        101L  0C   22m  CC=7      ←0
+  │ extract_products            97L  0C    4m  CC=2      ←0
+  │ php_api_example.php         76L  0C    2m  CC=6      ←0
+  │ run_all                     64L  0C    2m  CC=7      ←0
+  │ browser_helper              61L  0C    2m  CC=6      ←6
+  │ openai_example              60L  0C    2m  CC=3      ←0
+  │ wordpress_login             40L  0C    1m  CC=1      ←0
+  │ contact_form                37L  0C    1m  CC=1      ←0
+  │ wordpress_login.sh          35L  0C    0m  CC=0.0    ←0
+  │ curllm_wp_login.sh          35L  0C    0m  CC=0.0    ←0
+  │ setup_env.sh                33L  0C    0m  CC=0.0    ←0
+  │ curl_api.sh                 31L  0C    0m  CC=0.0    ←0
+  │ curl_contact_form.sh        31L  0C    0m  CC=0.0    ←0
+  │ fill_form.sh                30L  0C    0m  CC=0.0    ←0
+  │ curllm_contact_form.sh      30L  0C    0m  CC=0.0    ←0
+  │ curl_api.sh                 29L  0C    0m  CC=0.0    ←0
+  │ curl_product_search.sh      29L  0C    0m  CC=0.0    ←0
+  │ curl_wp_login.sh            29L  0C    0m  CC=0.0    ←0
+  │ curllm_product_search.sh    27L  0C    0m  CC=0.0    ←0
+  │ run.sh                       8L  0C    0m  CC=0.0    ←0
+  │ run.sh                       8L  0C    0m  CC=0.0    ←0
+  │ curllm-extract-links.sh      8L  0C    0m  CC=0.0    ←0
+  │ __init__                     1L  0C    0m  CC=0.0    ←0
+  │
+  curllm_web/                     CC̄=3.2    ←in:0  →out:22  !! split
+  │ server_manager             143L  0C    4m  CC=7      ←1
+  │ default_prompts             99L  0C    0m  CC=0.0    ←0
+  │ curllm_api                  61L  0C    1m  CC=5      ←1
+  │ prompts                     60L  0C    4m  CC=4      ←0
+  │ main                        49L  0C    1m  CC=7      ←0
+  │ pid_manager                 45L  0C    3m  CC=7      ←1
+  │ upload                      38L  0C    1m  CC=5      ←0
+  │ log_utils                   38L  0C    2m  CC=4      ←1
+  │ app                         37L  0C    0m  CC=0.0    ←0
+  │ static                      32L  0C    2m  CC=4      ←0
+  │ prompt_manager              32L  0C    2m  CC=3      ←2
+  │ execute                     29L  0C    1m  CC=3      ←0
+  │ logs                        23L  0C    2m  CC=2      ←0
+  │ health                      20L  0C    1m  CC=1      ←0
+  │ config                      19L  0C    0m  CC=0.0    ←0
+  │ __init__                    14L  0C    0m  CC=0.0    ←0
+  │ main                        11L  0C    1m  CC=1      ←0
+  │ __init__                     9L  0C    0m  CC=0.0    ←0
+  │ __init__                     9L  0C    0m  CC=0.0    ←0
+  │ file_utils                   8L  0C    1m  CC=2      ←1
+  │ __main__                     7L  0C    0m  CC=0.0    ←0
+  │ __init__                     6L  0C    0m  CC=0.0    ←0
+  │ __init__                     6L  0C    0m  CC=0.0    ←0
+  │ __init__                     5L  0C    0m  CC=0.0    ←0
+  │
+  extension/                      CC̄=2.8    ←in:3  →out:0
+  │ !! extension.js               955L  2C   82m  CC=44     ←2
+  │
+  curllm_server/                  CC̄=2.8    ←in:0  →out:0  ×DUP
+  │ !! curllm_executor            513L  1C   22m  CC=17     ←7
+  │ solver                      74L  1C    4m  CC=3      ←0  ×DUP
+  │ stealth_config              62L  1C    3m  CC=1      ←0  ×DUP
+  │ browserless_page            61L  1C    7m  CC=1      ←0  ×DUP
+  │ analyzer                    59L  1C    3m  CC=3      ←0  ×DUP
+  │ execute                     58L  0C    1m  CC=1      ←0
+  │ config                      53L  1C    1m  CC=1      ←0
+  │ simple_ollama               39L  1C    2m  CC=2      ←0
+  │ __main__                    35L  0C    1m  CC=4      ←0
+  │ browserless_context         26L  1C    3m  CC=1      ←0  ×DUP
+  │ app                         26L  0C    0m  CC=0.0    ←0
+  │ health                      18L  0C    1m  CC=1      ←0
+  │ models                      18L  0C    1m  CC=2      ←0
+  │ screenshot                  16L  0C    1m  CC=2      ←0
+  │ __init__                    15L  0C    0m  CC=0.0    ←0
+  │ local_agent                 12L  1C    1m  CC=1      ←0
+  │ run_logger                   8L  1C    0m  CC=0.0    ←0
+  │ __init__                     8L  0C    0m  CC=0.0    ←0
+  │ __init__                     6L  0C    0m  CC=0.0    ←0
+  │ __init__                     5L  0C    0m  CC=0.0    ←0
+  │ __init__                     5L  0C    0m  CC=0.0    ←0
+  │ __init__                     5L  0C    0m  CC=0.0    ←0
+  │ __init__                     5L  0C    0m  CC=0.0    ←0
+  │ __init__                     5L  0C    0m  CC=0.0    ←0
+  │ __init__                     5L  0C    0m  CC=0.0    ←0
+  │ __init__                     5L  0C    0m  CC=0.0    ←0
+  │
+  ./                              CC̄=2.0    ←in:0  →out:0
+  │ !! hardcoded_report.json    18143L  0C    0m  CC=0.0    ←0
+  │ !! examples                   592L  0C   21m  CC=11     ←0
+  │ !! goal.yaml                  512L  0C    0m  CC=0.0    ←0
+  │ examples_streamware        379L  0C   15m  CC=2      ←0
+  │ Makefile                   359L  0C    0m  CC=0.0    ←0
+  │ install.sh                 290L  0C    0m  CC=0.0    ←0
+  │ test.json                  259L  0C    0m  CC=0.0    ←0
+  │ docker-compose.yml         138L  0C    0m  CC=0.0    ←0
+  │ !! wordpress_batch            103L  0C    1m  CC=19     ←0
+  │ web_prompts.json            97L  0C    0m  CC=0.0    ←0
+  │ pyproject.toml              92L  0C    0m  CC=0.0    ←0
+  │ QUICKSTART.sh               66L  0C    0m  CC=0.0    ←0
+  │ start-web-full.sh           62L  0C    0m  CC=0.0    ←0
+  │ project.sh                  59L  0C    0m  CC=0.0    ←0
+  │ pyqual.yaml                 55L  0C    0m  CC=0.0    ←0
+  │ projektor.yaml              51L  0C    0m  CC=0.0    ←0
+  │ Dockerfile                  45L  0C    0m  CC=0.0    ←0
+  │ docker-compose.test.yml     45L  0C    0m  CC=0.0    ←0
+  │ requirements.txt            28L  0C    0m  CC=0.0    ←0
+  │ restart.sh                   1L  0C    0m  CC=0.0    ←0
+  │ tree.sh                      1L  0C    0m  CC=0.0    ←0
+  │
+  monitoring/                     CC̄=1.8    ←in:1056  →out:1
+  │ website_monitor.sh         337L  0C    7m  CC=0.0    ←52
+  │ !! send_email                  76L  0C    2m  CC=15     ←0
+  │ Makefile                    75L  0C    0m  CC=0.0    ←0
+  │
+  tools/                          CC̄=0.0    ←in:2  →out:0
+  │ generate_examples.sh       185L  0C    3m  CC=0.0    ←2
+  │
+  docs/                           CC̄=0.0    ←in:0  →out:0
+  │ update_nav.sh               35L  0C    0m  CC=0.0    ←0
+  │
+  output/                         CC̄=0.0    ←in:0  →out:0
+  │ filtered_products.json      76L  0C    0m  CC=0.0    ←0
+  │
+  flows/                          CC̄=0.0    ←in:0  →out:0
+  │ form_fill_modular.yaml      53L  0C    0m  CC=0.0    ←0
+  │ example_http_pipeline.yaml    48L  0C    0m  CC=0.0    ←0
+  │ example_scraping_pipeline.yaml    47L  0C    0m  CC=0.0    ←0
+  │ decision_tree_debug.yaml    45L  0C    0m  CC=0.0    ←0
+  │ example_multi_site.yaml     39L  0C    0m  CC=0.0    ←0
+  │ example_bql.yaml            32L  0C    0m  CC=0.0    ←0
+  │ example_extraction.yaml     32L  0C    0m  CC=0.0    ←0
+  │ example_form_fill.yaml      26L  0C    0m  CC=0.0    ←0
+  │ example_screenshot.yaml     20L  0C    0m  CC=0.0    ←0
+  │ example_browse.yaml         19L  0C    0m  CC=0.0    ←0
+  │
+  ── zero ──
+     captcha/__init__.py                       0L
+     curllm_core/form_fill.py                  0L
+
+COUPLING:
+                                      monitoring            functions.js             curllm_core  curllm_core.streamware                 scripts   examples.url_resolver      examples.detection         curllm_core.cli     examples.streamware  curllm_core.deprecated  examples.orchestration               functions                examples     examples_streamware                 captcha
+              monitoring                      ──                       1                     ←21                      ←2                    ←157                    ←159                    ←131                    ←109                     ←69                     ←64                     ←71                                             ←66                     ←32                     ←37  hub
+            functions.js                      ←1                      ──                    ←175                     ←98                     ←20                                                                      ←4                                              ←9                                              ←7                      ←1                                              ←9  hub
+             curllm_core                      21                     175                      ──                       1                                               1                                                                                              ←4                      ←3                      17                      ←4                                                  hub
+  curllm_core.streamware                       2                      98                       8                      ──                      68                       3                                              ←6                     ←31                      ←4                                              13                                             ←20                          hub
+                 scripts                     157                      20                                             ←68                      ──                                                                                                                                                                       2                                                                          hub
+   examples.url_resolver                     159                                               1                      ←3                                              ──                                                                                                                      ←4                                                                                                  hub
+      examples.detection                     131                                                                                                                                              ──                                                                       1                                                                                                                          !! fan-out
+         curllm_core.cli                     109                       4                                               6                                                                                              ──                                                                                               3                                                                          !! fan-out
+     examples.streamware                      69                                                                      31                                                                                                                      ──                                                                                                                                                  !! fan-out
+  curllm_core.deprecated                      64                       9                       4                       4                                                                      ←1                                                                      ──                                                                                                                          !! fan-out
+  examples.orchestration                      71                                               3                                                                       4                                                                                                                      ──                                                                                                  !! fan-out
+               functions                                               7                     ←17                     ←13                      ←2                                                                      ←3                                                                                              ──                                                                      ←1  hub
+                examples                      66                       1                       4                                                                                                                                                                                                                                              ──                                                  !! fan-out
+     examples_streamware                      32                                                                      20                                                                                                                                                                                                                                              ──                          !! fan-out
+                 captcha                      37                       9                                                                                                                                                                                                                                               1                                                                      ──  !! fan-out
+  CYCLES: none
+  HUB: curllm_web.server/ (fan-in=5)
+  HUB: curllm_core.streamware/ (fan-in=69)
+  HUB: scripts/ (fan-in=68)
+  HUB: curllm_core/ (fan-in=51)
+  HUB: monitoring/ (fan-in=1056)
+  HUB: functions/ (fan-in=72)
+  HUB: curllm_web.prompts/ (fan-in=8)
+  HUB: curllm_core.extraction/ (fan-in=26)
+  HUB: curllm_server.executor/ (fan-in=8)
+  HUB: examples.url_resolver/ (fan-in=9)
+  HUB: functions.js/ (fan-in=539)
+  HUB: curllm_core.form_fill/ (fan-in=6)
+  SMELL: curllm_web.server/ fan-out=22 → split needed
+  SMELL: curllm_core.extraction_orchestrator/ fan-out=13 → split needed
+  SMELL: examples.llm-providers/ fan-out=27 → split needed
+  SMELL: curllm_core.streamware/ fan-out=194 → split needed
+  SMELL: scripts/ fan-out=179 → split needed
+  SMELL: curllm_logs/ fan-out=9 → split needed
+  SMELL: captcha/ fan-out=48 → split needed
+  SMELL: examples.extraction/ fan-out=8 → split needed
+  SMELL: examples_streamware/ fan-out=52 → split needed
+  SMELL: curllm_core/ fan-out=243 → split needed
+  SMELL: examples.orchestration/ fan-out=79 → split needed
+  SMELL: examples.streamware/ fan-out=100 → split needed
+  SMELL: examples/ fan-out=72 → split needed
+  SMELL: curllm_core.orchestration/ fan-out=18 → split needed
+  SMELL: curllm_web.routes/ fan-out=14 → split needed
+  SMELL: curllm_core.execution/ fan-out=32 → split needed
+  SMELL: curllm_web/ fan-out=22 → split needed
+  SMELL: curllm_core.validation/ fan-out=20 → split needed
+  SMELL: forms/ fan-out=8 → split needed
+  SMELL: curllm_core.running/ fan-out=31 → split needed
+  SMELL: functions.safety/ fan-out=10 → split needed
+  SMELL: curllm_core.tools/ fan-out=12 → split needed
+  SMELL: curllm_core.extraction/ fan-out=14 → split needed
+  SMELL: examples.currency/ fan-out=36 → split needed
+  SMELL: curllm_server.executor/ fan-out=15 → split needed
+  SMELL: curllm_core.hierarchical/ fan-out=10 → split needed
+  SMELL: examples.detection/ fan-out=135 → split needed
+  SMELL: examples.url_resolver/ fan-out=163 → split needed
+  SMELL: curllm_core.deprecated/ fan-out=82 → split needed
+  SMELL: curllm_core.data_export/ fan-out=8 → split needed
+  SMELL: pricing/ fan-out=22 → split needed
+  SMELL: curllm_core.cli/ fan-out=122 → split needed
+  SMELL: wordpress_batch/ fan-out=9 → split needed
+  SMELL: curllm_core.form_fill/ fan-out=20 → split needed
+  SMELL: curllm_core.orchestrators/ fan-out=36 → split needed
+
+EXTERNAL:
+  validation: run `vallm batch .` → validation.toon
+  duplication: run `redup scan .` → duplication.toon

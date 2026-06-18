@@ -10,10 +10,8 @@ Key improvement: Analyze WHAT is on the page BEFORE deciding what to do.
 This prevents false positives like treating product listing pages as form tasks.
 """
 
-import re
-import json
 from enum import Enum
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, Optional, Tuple
 from dataclasses import dataclass
 
 
