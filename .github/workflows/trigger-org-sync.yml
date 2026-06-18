@@ -21,7 +21,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.ORG_SYNC_PAT }}
-          repository: wronai/.github
+          repository: semcod/.github
           event-type: org-repo-changed
           client-payload: >-
             {"repository":"${{ github.repository }}","ref":"${{ github.ref }}","sha":"${{ github.sha }}"}
