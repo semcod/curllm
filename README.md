@@ -5,13 +5,11 @@
 
 ## AI Cost Tracking
 
-![PyPI](https://img.shields.io/badge/pypi-costs-blue) ![Version](https://img.shields.io/badge/version-0.1.31-blue) ![Python](https://img.shields.io/badge/python-3.9+-blue) ![License](https://img.shields.io/badge/license-Apache--2.0-green)
-![AI Cost](https://img.shields.io/badge/AI%20Cost-$4.65-orange) ![Human Time](https://img.shields.io/badge/Human%20Time-66.9h-blue) ![Model](https://img.shields.io/badge/Model-openrouter%2Fqwen%2Fqwen3--coder--next-lightgrey)
+![AI Cost](https://img.shields.io/badge/AI%20Cost-$17.45-orange) ![AI Model](https://img.shields.io/badge/AI%20Model-openrouter%2Fqwen%2Fqwen3-coder-next-lightgrey)
 
-- 🤖 **LLM usage:** $4.6540 (168 commits)
-- 👤 **Human dev:** ~$6691 (66.9h @ $100/h, 30min dedup)
+This project uses AI-generated code. Total cost: **$17.4471** with **169** AI commits.
 
-Generated on 2026-06-07 using [openrouter/qwen/qwen3-coder-next](https://openrouter.ai/qwen/qwen3-coder-next)
+Generated on 2026-06-29 using [openrouter/qwen/qwen3-coder-next](https://openrouter.ai/models/openrouter/qwen/qwen3-coder-next)
 
 ---
 
@@ -402,3 +400,8 @@ Built with:
 <p align="center">
   Made with ❤️ by <a href="https://github.com/wronai">wronai</a>
 </p>
+
+
+## License
+
+Licensed under Apache-2.0.

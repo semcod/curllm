@@ -101,14 +101,29 @@ def build_testql_scenario_text(
         )
         return builder.build()
 
+    env_rows = "\n".join(f"  {key},  {_csv(value)}" for key, value in env.items())
+    context = {
+        "instruction": _csv(instruction),
+        "url": target,
+        "captcha_solver": str(captcha_solver).lower(),
+        "visual_mode": str(visual_mode).lower(),
+    }
+    context_rows = "\n".join(f"  {key},  {value}" for key, value in context.items())
+
     return f"""# SCENARIO: curllm-replay-from-execution
 # TYPE: gui
 # SOURCE: curllm.execution.v1
+
+ENVIRONMENT[{len(env)}]{{key, value}}:
+{env_rows}
 
 CONFIG[3]{{key, value}}:
   target_url,  {base_url}
   curllm_instruction,  {_csv(instruction)}
   execution_success,  {'true' if success else 'false'}
+
+CONTEXT[{len(context)}]{{key, value}}:
+{context_rows}
 
 COMMANDS[2]{{command}}:
   GUI_START ${{target_url}}

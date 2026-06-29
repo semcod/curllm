@@ -1,5 +1,20 @@
 # Changelog
 
+## [Unreleased]
+
+## [1.0.41] - 2026-06-29
+
+### Docs
+- Update README.md
+
+### Test
+- Update tests/test_v2_imports.py
+
+### Other
+- Update curllm_mcp/testql_export.py
+- Update uv.lock
+
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),

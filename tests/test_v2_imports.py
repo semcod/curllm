@@ -172,12 +172,14 @@ class TestCLIV1Flag:
     
     def test_cli_help_contains_v1(self):
         """Test that CLI help mentions --v1 for legacy mode."""
+        import os
         import subprocess
+        repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         result = subprocess.run(
             ['./curllm', '--help'],
             capture_output=True,
             text=True,
-            cwd='/home/tom/github/wronai/curllm'
+            cwd=repo_root
         )
         assert '--v1' in result.stdout
         assert 'legacy' in result.stdout.lower() or 'deprecated' in result.stdout.lower()
